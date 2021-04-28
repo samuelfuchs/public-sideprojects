@@ -141,7 +141,7 @@ if (birthYear <= 2000) {
 	century = 21
 }
 console.log(century)
-*/
+
 // Type Conversion and Coercion
 // type conversion
 const inputYear = '1991'
@@ -162,3 +162,5 @@ console.log('23' > '18')
 let n = '1' + 1
 n = n - 1
 console.log(n)
+*/
+// Truthy and Falsy Values
