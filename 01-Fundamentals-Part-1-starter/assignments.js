@@ -50,7 +50,7 @@ if (population > 33) {
 } else {
 	console.log(`${country}'s population is ${avgPop - population} below average`)
 }
-*/
+
 
 // Coding Challenge #1 + #2
 const massMark = 95
@@ -70,3 +70,4 @@ if (bmiMark > bmiJohn) {
 } else {
 	console.log(`John's BMI (${bmiJohn}) is higher than Mark's(${bmiMark})!`)
 }
+*/
