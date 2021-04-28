@@ -1,3 +1,4 @@
+/*
 // Values and Variables
 const country = 'Brazil'
 const continent = 'South America'
@@ -42,25 +43,30 @@ console.log(
 	description
 )
 
-/*
-// Coding Challenge #1
-const weightMark = 95
-const heightMark = 1.88
-
-const weightJohn = 85
-const heightJohn = 1.76
-
-const bmiMark = weightMark / heightMark ** 2
-const bmiJohn = weightJohn / heightJohn ** 2
-
-const markHigherBMI = bmiMark > bmiJohn
-console.log(markHigherBMI)
-*/
-
 // Taking Decisions: if/else Statements
 
 if (population > 33) {
 	console.log(`${country}'s population is above average`)
 } else {
 	console.log(`${country}'s population is ${avgPop - population} below average`)
+}
+*/
+
+// Coding Challenge #1 + #2
+const massMark = 95
+const heightMark = 1.88
+
+const massJohn = 85
+const heightJohn = 1.76
+
+const bmiMark = massMark / heightMark ** 2
+const bmiJohn = massJohn / heightJohn ** 2
+
+const markHigherBMI = bmiMark > bmiJohn
+console.log(markHigherBMI)
+
+if (bmiMark > bmiJohn) {
+	console.log(`Mark's BMI (${bmiMark}) is higher than John's (${bmiJohn})!`)
+} else {
+	console.log(`John's BMI (${bmiJohn}) is higher than Mark's(${bmiMark})!`)
 }
