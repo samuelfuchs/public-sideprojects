@@ -164,3 +164,16 @@ n = n - 1
 console.log(n)
 */
 // Truthy and Falsy Values
+const money = 0
+if (money) {
+	console.log("Don't spend it all ;)")
+} else {
+	console.log('You should get a job!')
+}
+
+let height
+if (height) {
+	console.log('YAY! Height is defined')
+} else {
+	console.log('Height is UNDEFINED')
+}
