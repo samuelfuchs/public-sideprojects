@@ -80,7 +80,7 @@ console.log(
 	'123' < 57,
 	5 + '4' + 9 - 4 - 2
 )
-*/
+
 // Equality Operators: == vs. ===
 const numNeighbours = Number(
 	prompt('How many neighbour countries does your country have?')
@@ -93,3 +93,4 @@ if (numNeighbours === 1) {
 } else {
 	console.log('No border')
 }
+*/
