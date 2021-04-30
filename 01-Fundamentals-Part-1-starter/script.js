@@ -177,7 +177,7 @@ if (height) {
 } else {
 	console.log('Height is UNDEFINED')
 }
-*/
+
 // Equality Operators: == vs. ===
 const age = '18'
 if (age === 18) console.log('You just became an adult :D (strict)')
@@ -197,3 +197,4 @@ if (favourite === 23) {
 }
 
 if (favourite !== 23) console.log('Why not 23?')
+*/
