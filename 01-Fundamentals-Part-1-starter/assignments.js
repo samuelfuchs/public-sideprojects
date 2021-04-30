@@ -94,3 +94,15 @@ if (numNeighbours === 1) {
 	console.log('No border')
 }
 */
+
+// Logical Operators
+const country = 'Brazil'
+const pop = 10
+const lang = 'english'
+const isIsland = false
+
+if (lang === 'english' && pop <= 50 && !isIsland) {
+	console.log(`You should live in ${country}`)
+} else {
+	console.log(`${country} does not meet your criteria`)
+}
