@@ -134,7 +134,7 @@ if (avgScoreKoalas > avgScoreDolphins && avgScoreKoalas >= 100) {
 } else {
 	console.log(`No one wins! No team has reached the minimum requirements`)
 }
-*/
+
 // The switch Statement
 const language = 'portuguese'
 
@@ -159,3 +159,4 @@ switch (language) {
 		console.log('Great language, too! 😁')
 		break
 }
+*/

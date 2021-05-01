@@ -269,3 +269,29 @@ if (day === 'monday') {
 	console.log('Not a valid day!')
 }
 */
+// Statements and Expressions
+
+// Statements are like complete sentences
+// Expressions produce values
+
+// The Conditional (Ternary) Operator
+const age = 23
+age >= 18
+	? console.log('I like to drink wine 🍷')
+	: console.log('I like to drink water 💦')
+
+const drink = age >= 18 ? 'wine 🍷' : 'water 💦'
+console.log(drink)
+
+let drink2
+if (age >= 18) {
+	drink2 = 'wine 🍷'
+} else {
+	drink2 = 'water 💦'
+}
+console.log(drink2)
+
+console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💦'}`)
+
+// Ternary operators do not replace if/else statements. For example
+// if we need validation for bigger blocks of code we use if/else
