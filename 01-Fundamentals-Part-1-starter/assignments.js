@@ -159,12 +159,19 @@ switch (language) {
 		console.log('Great language, too! 😁')
 		break
 }
-*/
+
 // ==== The Conditional (Ternary) Operator
 const country = 'Brazil'
-const continent = 'South America'
 let population = '211'
 
 console.log(
 	`${country}'s population is ${population >= 33 ? 'above' : 'below'} average`
+)
+*/
+// ==== Coding Challenge #4
+const bill = 275
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2
+
+console.log(
+	`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
 )
