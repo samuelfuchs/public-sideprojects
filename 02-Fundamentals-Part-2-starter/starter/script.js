@@ -21,3 +21,38 @@ const private = 534
 // ====
 // Functions
 // ====
+
+// Fundamental building block of programming
+// A piece of code we can reuse
+// Allow us to write more maintainable code without having to write manually code over and over again
+// a func can not only reuse code, but it can give something back
+// A variable holds a value
+
+// {} -> called function body
+function logger() {
+	console.log('My name is Samuel')
+}
+
+// Calling / Running / Invoking the function
+logger()
+logger()
+logger()
+
+// apples, oranges -> called parameters. Represent input data. Like empty spaces we fill out later
+function fruitProcessor(apples, oranges) {
+	const juice = `Juice with ${apples} apples and ${oranges} oranges`
+	return juice // result of executing this func
+}
+
+// Calling func | Input of function. Called arguments
+const appleJuice = fruitProcessor(5, 0)
+console.log(appleJuice)
+
+console.log(fruitProcessor(5, 0))
+
+const appleOrangeJuice = fruitProcessor(2, 4)
+console.log(appleOrangeJuice)
+
+const num = Number('23')
+
+// DRY - Don't repeat yourself
