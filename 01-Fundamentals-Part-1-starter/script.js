@@ -8,14 +8,14 @@ console.log(40 + 8 + 23 - 10)
 let firstName = 'Samuel'
 console.log(firstName)
 
-// Values and Variables
+// ==== Values and Variables
 let country = 'Brazil'
 let continent = 'South America'
 let population = '211'
 
 console.log(country, continent, population)
 
-// Data Types
+// ==== Data Types
 let javascriptIsFun = true
 console.log(javascriptIsFun)
 
@@ -36,7 +36,7 @@ console.log(typeof year)
 
 console.log(typeof null)
 
-// let, const and var
+// ==== let, const and var
 let age = 30
 age = 31
 
@@ -50,9 +50,9 @@ job = 'teacher'
 lastName = 'Fuchs'
 console.log(lastName)
 
-// Basic Operators
+// ==== Basic Operators
 
-// Math operators
+// ==== Math operators
 const now = 2037
 const ageSamuel = now - 1990
 const ageSarah = now - 2018
@@ -64,7 +64,7 @@ const firstName = 'Samuel'
 const lastName = 'Fuchs'
 console.log(firstName + ' ' + lastName)
 
-// Assignment operators
+// ==== Assignment operators
 let x = 10 + 5
 x += 10 // x = x + 10 = 25
 x *= 4 // x = x * 4 = 100
@@ -73,7 +73,7 @@ x--
 x--
 console.log(x)
 
-// Comparison operators
+// ==== Comparison operators
 console.log(ageSamuel > ageSarah) // <, >, <=, >=
 console.log(ageSarah >= 18)
 
@@ -81,7 +81,7 @@ const isFullAge = ageSarah >= 18
 
 console.log(now - 1991 > now - 2018)
 
-// Operator Precedence
+// ==== Operator Precedence
 const now = 2037
 const ageSamuel = now - 1990
 const ageSarah = now - 2018
@@ -98,7 +98,7 @@ const averageAge = (ageSamuel + ageSarah) / 2
 console.log(ageSamuel, ageSarah, averageAge)
 
 
-// Strings and Template Literals
+// ==== Strings and Template Literals
 const firstName = 'Samuel'
 const job = 'teacher'
 const birthYear = 1990
@@ -122,7 +122,7 @@ multiple
 lines`)
 
 
-// Taking Decisions: if/else Statements
+// ==== Taking Decisions: if/else Statements
 const age = 15
 
 if (age >= 18) {
@@ -142,7 +142,7 @@ if (birthYear <= 2000) {
 }
 console.log(century)
 
-// Type Conversion and Coercion
+// ==== Type Conversion and Coercion
 // type conversion
 const inputYear = '1991'
 console.log(Number(inputYear), inputYear)
@@ -153,7 +153,7 @@ console.log(typeof NaN)
 
 console.log(String(23), 23)
 
-// type coercion
+// ==== type coercion
 console.log('I am ' + 23 + ' years old')
 console.log('23' - '10' - 3)
 console.log('23' + '10' + 3)
@@ -163,7 +163,7 @@ let n = '1' + 1
 n = n - 1
 console.log(n)
 
-// Truthy and Falsy Values
+// ==== Truthy and Falsy Values
 const money = 0
 if (money) {
 	console.log("Don't spend it all ;)")
@@ -178,7 +178,7 @@ if (height) {
 	console.log('Height is UNDEFINED')
 }
 
-// Equality Operators: == vs. ===
+// ==== Equality Operators: == vs. ===
 const age = '18'
 if (age === 18) console.log('You just became an adult :D (strict)')
 if (age == 18) console.log('You just became an adult :D (loose)')
@@ -198,9 +198,9 @@ if (favourite === 23) {
 
 if (favourite !== 23) console.log('Why not 23?')
 
-// Boolean Logic
+// ==== Boolean Logic
 
-// Logical Operators
+// ==== Logical Operators
 const hasDriversLicense = true
 const hasGoodVision = true
 
@@ -223,7 +223,7 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 	console.log('Someone else should drive...')
 }
 
-// The switch Statement
+// ==== The switch Statement
 const day = 'thursday'
 
 switch (day) {
@@ -268,13 +268,13 @@ if (day === 'monday') {
 } else {
 	console.log('Not a valid day!')
 }
-*/
-// Statements and Expressions
+
+// ==== Statements and Expressions
 
 // Statements are like complete sentences
 // Expressions produce values
 
-// The Conditional (Ternary) Operator
+// ==== The Conditional (Ternary) Operator
 const age = 23
 age >= 18
 	? console.log('I like to drink wine 🍷')
@@ -295,3 +295,4 @@ console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💦'}`)
 
 // Ternary operators do not replace if/else statements. For example
 // if we need validation for bigger blocks of code we use if/else
+*/

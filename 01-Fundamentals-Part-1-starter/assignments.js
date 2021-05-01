@@ -1,17 +1,17 @@
 /*
-// Values and Variables
+// ==== Values and Variables
 const country = 'Brazil'
 const continent = 'South America'
 let population = '211'
 
-// Data Types
+// ==== Data Types
 const isIsland = false
 let language
 
 // let, const and var
 language = 'Portuguese'
 
-// Basic Operators
+// ==== Basic Operators
 
 let countrySplitInHalf = population / 2
 countrySplitInHalf++
@@ -43,7 +43,7 @@ console.log(
 	description
 )
 
-// Taking Decisions: if/else Statements
+// ==== Taking Decisions: if/else Statements
 
 if (population > 33) {
 	console.log(`${country}'s population is above average`)
@@ -52,7 +52,7 @@ if (population > 33) {
 }
 
 
-// Coding Challenge #1 + #2
+// ==== Coding Challenge #1 + #2
 const massMark = 95
 const heightMark = 1.88
 
@@ -71,7 +71,7 @@ if (bmiMark > bmiJohn) {
 	console.log(`John's BMI (${bmiJohn}) is higher than Mark's(${bmiMark})!`)
 }
 
-// Type Conversion and Coercion
+// ==== Type Conversion and Coercion
 
 console.log(
 	'9' - '5',
@@ -81,7 +81,7 @@ console.log(
 	5 + '4' + 9 - 4 - 2
 )
 
-// Equality Operators: == vs. ===
+// ==== Equality Operators: == vs. ===
 const numNeighbours = Number(
 	prompt('How many neighbour countries does your country have?')
 )
@@ -95,7 +95,7 @@ if (numNeighbours === 1) {
 }
 
 
-// Logical Operators
+// ==== Logical Operators
 const country = 'Brazil'
 const pop = 10
 const lang = 'english'
@@ -107,7 +107,7 @@ if (lang === 'english' && pop <= 50 && !isIsland) {
 	console.log(`${country} does not meet your criteria`)
 }
 
-// Coding Challenge #3
+// ==== Coding Challenge #3
 
 // const avgScoreDolphins = (96 + 108 + 89) / 3
 // const avgScoreKoalas = (88 + 91 + 110) / 3
@@ -135,7 +135,7 @@ if (avgScoreKoalas > avgScoreDolphins && avgScoreKoalas >= 100) {
 	console.log(`No one wins! No team has reached the minimum requirements`)
 }
 
-// The switch Statement
+// ==== The switch Statement
 const language = 'portuguese'
 
 switch (language) {
@@ -160,3 +160,11 @@ switch (language) {
 		break
 }
 */
+// ==== The Conditional (Ternary) Operator
+const country = 'Brazil'
+const continent = 'South America'
+let population = '211'
+
+console.log(
+	`${country}'s population is ${population >= 33 ? 'above' : 'below'} average`
+)
