@@ -222,7 +222,7 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 } else {
 	console.log('Someone else should drive...')
 }
-*/
+
 // The switch Statement
 const day = 'thursday'
 
@@ -268,3 +268,4 @@ if (day === 'monday') {
 } else {
 	console.log('Not a valid day!')
 }
+*/
