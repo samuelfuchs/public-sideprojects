@@ -295,4 +295,53 @@ console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💦'}`)
 
 // Ternary operators do not replace if/else statements. For example
 // if we need validation for bigger blocks of code we use if/else
+
+// JavaScript Releases: ES5, ES6+ and ESNext
+
+// 1995-Brendan Eich creates the very first version of JS in just 10 days
+// It was called Mocha, but already had many fundamental features of modern JS
+
+// 1996-Mocha changes to LiveScript and then to JavaScript, in order to
+// attract Java devs. However, JS has almost nothing to do with Java
+// MS launches IE, copying JS from Netscape and calling it JScript
+
+// 1997-With a need to standardize the language, ECMA releases ECMAScript 1 (ES1),
+// the first official standart for JS (ECMAScript is the standard, JS the language in practice)
+
+// 2009-ES5 (ECMAScript 5) is released with lots of great new features
+
+// 2015-ES6/ES2015 (ECMAScript 2015) was released: the biggest update to the language ever!
+// ECMAScript changes to an annual release cycle in order to ship
+// less features per update
+
+// 2016 and beyond-Release of ES2016/ES2017/ES2019/.../ES2050
+
+// Backwards compatibility: don't break the web!
+// Code written today is readable by computers back in the days
+
+// Old features are never removed
+// Not really new versions, just incremental updates (releases)
+// Websites keep working forever!
+
+// Not forwards compatible
+
+// 2 Phases
+// Development - you use Google Chrome and build your app
+// Production - Use Babel to transpile and polyfill your code (converting back to ES5 to ensure browser compatibility for all users)
+
+// ES5 - Full supported in all browsers (down to IE 9 from 2011)
+// Ready to be used today
+
+// ES6+ Well supported in all modern browsers
+// No support in older browsers
+// Can use most features in production with transpiling and polyfilling
+
+// ES2021 and beyond - ESNext: Future versions of the language
+// (new feature proposals that reach Stage 4)
+// Can already use some features in production with transpiling and polyfilling
+
+// 3 reasons why we should not forget the Good Ol' JS:
+// You will better understand how JS actually works
+// Many tutorials and code you find online today are still in ES5
+// When working on old codebases, these will be written in ES5
 */
