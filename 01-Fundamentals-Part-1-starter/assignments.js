@@ -93,7 +93,7 @@ if (numNeighbours === 1) {
 } else {
 	console.log('No border')
 }
-*/
+
 
 // Logical Operators
 const country = 'Brazil'
@@ -105,4 +105,32 @@ if (lang === 'english' && pop <= 50 && !isIsland) {
 	console.log(`You should live in ${country}`)
 } else {
 	console.log(`${country} does not meet your criteria`)
+}
+*/
+// Coding Challenge #3
+
+// const avgScoreDolphins = (96 + 108 + 89) / 3
+// const avgScoreKoalas = (88 + 91 + 110) / 3
+
+// const avgScoreDolphins = (97 + 112 + 101) / 3
+// const avgScoreKoalas = (109 + 95 + 123) / 3
+
+const avgScoreDolphins = (97 + 112 + 101) / 3
+const avgScoreKoalas = (109 + 95 + 106) / 3
+console.log(avgScoreDolphins, avgScoreKoalas)
+
+if (avgScoreKoalas > avgScoreDolphins && avgScoreKoalas >= 100) {
+	console.log(
+		`Team Koalas wins the trophy with an average score of ${avgScoreKoalas}`
+	)
+} else if (avgScoreDolphins > avgScoreKoalas && avgScoreDolphins >= 100) {
+	console.log(
+		`Team Dolphins wins the trophy with an average score of ${avgScoreDolphins}`
+	)
+} else if (avgScoreKoalas === avgScoreDolphins && avgScoreDolphins >= 100) {
+	console.log(
+		`It's a draw! Both teams have an average score of ${avgScoreDolphins}`
+	)
+} else {
+	console.log(`No one wins! No team has reached the minimum requirements`)
 }
