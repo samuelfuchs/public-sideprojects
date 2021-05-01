@@ -52,7 +52,7 @@ console.log(lastName)
 
 // Basic Operators
 
-//Math operators
+// Math operators
 const now = 2037
 const ageSamuel = now - 1990
 const ageSarah = now - 2018
@@ -223,3 +223,48 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 	console.log('Someone else should drive...')
 }
 */
+// The switch Statement
+const day = 'thursday'
+
+switch (day) {
+	case 'monday': // day === 'monday'
+		console.log('Plan my course structure')
+		console.log('Go to coding meetup')
+		break // without the breack the code continues to execute
+	case 'tuesday':
+		console.log('Prepare theory videos')
+		break
+	case 'wednesday':
+	case 'thursday':
+		console.log('Write code examples')
+		break
+	case 'friday':
+		console.log('Record videos')
+		break
+	case 'saturday':
+	case 'sunday':
+		console.log('Enjoy the weekend 😁')
+		break
+	default:
+		console.log('Not a valid day!')
+		break
+}
+
+if (day === 'monday') {
+	console.log('Plan my course structure')
+	console.log('Go to coding meetup')
+} else if (day === 'tuesday') {
+	console.log('Prepare theory videos')
+} else if (day === 'wednesday') {
+	console.log('Nothing planned for today')
+} else if (day === 'thursday') {
+	console.log('Write code examples')
+} else if (day === 'friday') {
+	console.log('Record videos')
+} else if (day === 'saturday') {
+	console.log('Nothing planned for today')
+} else if (day === 'sunday') {
+	console.log('Enjoy the weekend 😁')
+} else {
+	console.log('Not a valid day!')
+}

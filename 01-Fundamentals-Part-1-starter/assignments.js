@@ -106,7 +106,7 @@ if (lang === 'english' && pop <= 50 && !isIsland) {
 } else {
 	console.log(`${country} does not meet your criteria`)
 }
-*/
+
 // Coding Challenge #3
 
 // const avgScoreDolphins = (96 + 108 + 89) / 3
@@ -134,3 +134,4 @@ if (avgScoreKoalas > avgScoreDolphins && avgScoreKoalas >= 100) {
 } else {
 	console.log(`No one wins! No team has reached the minimum requirements`)
 }
+*/
