@@ -17,7 +17,7 @@ const private = 534
 // 1st: forbids us to do certain things
 // 2nd: creates visible errors in the console where normal JS mode would
 // have failed silently
-*/
+
 // ====
 // Functions
 // ====
@@ -56,3 +56,4 @@ console.log(appleOrangeJuice)
 const num = Number('23')
 
 // DRY - Don't repeat yourself
+*/
