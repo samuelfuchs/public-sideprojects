@@ -1,4 +1,5 @@
 'use strict'
+/*
 // ====
 // Functions
 // ====
@@ -12,3 +13,8 @@ function describeCountry(country, population, capitalCity) {
 describeCountry('Brazil', 211, 'Brasilia')
 describeCountry('Argentina', 45, 'Buenos Aires')
 describeCountry('Canada', 37, 'Ottawa')
+*/
+
+// ====
+// Function Declarations vs. Expressions
+// ====

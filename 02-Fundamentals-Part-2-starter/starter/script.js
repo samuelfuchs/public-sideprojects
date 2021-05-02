@@ -6,7 +6,6 @@ const passTest = true
 if (passTest) hasDriverLicense = true
 if (hasDriversLicense) console.log('I can drive!!')
 
-
 const interface = 'Audio'
 const private = 534
 
@@ -57,3 +56,6 @@ const num = Number('23')
 
 // DRY - Don't repeat yourself
 */
+// ====
+// Function Declarations vs. Expressions
+// ====
