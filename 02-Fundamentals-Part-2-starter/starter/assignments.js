@@ -46,3 +46,17 @@ const percentageOfWorld3 = (population, country) =>
 
 console.log(percentageOfWorld3(211, 'Brazil'))
 */
+// ====
+// Functions Calling Other Functions
+// ====
+
+function describePopulation(population, country) {
+	const calcPercentage = percentageOfWorld1(population)
+	return `${country} has ${population} million people, which is about ${calcPercentage}% of the world.`
+}
+
+function percentageOfWorld1(population) {
+	return (population / 7900) * 100
+}
+
+console.log(describePopulation(211, 'Brazil'))
