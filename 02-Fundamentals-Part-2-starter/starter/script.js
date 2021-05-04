@@ -59,3 +59,24 @@ const num = Number('23')
 // ====
 // Function Declarations vs. Expressions
 // ====
+// func declaration = using function keyword to declare a func, like declaring a variable
+// input is a parameter in this func
+//parameter is a bit like local variable available only inside the func
+function calcAge1(birthYear) {
+	return 2037 - birthYear
+}
+
+// argument is the value we use to fill in the placeholder that is the parameter
+const age1 = calcAge1(1990)
+console.log(age1)
+
+// == function expression
+// basically a func without name (called an anonnymous func)
+// It's basically an expression. Remember, expressions produce value
+// We use that value and store it in calcAge2, and this will, then, be the func
+const calcAge2 = function (birthYear) {
+	return 2037 - birthYear
+}
+
+const age2 = calcAge2(1990)
+console.log(age2)
