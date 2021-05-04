@@ -13,7 +13,7 @@ function describeCountry(country, population, capitalCity) {
 describeCountry('Brazil', 211, 'Brasilia')
 describeCountry('Argentina', 45, 'Buenos Aires')
 describeCountry('Canada', 37, 'Ottawa')
-*/
+
 
 // ====
 // Function Declarations vs. Expressions
@@ -37,3 +37,11 @@ const brazil2 = percentageOfWorld2(211)
 const argentina2 = percentageOfWorld2(45)
 const canada2 = percentageOfWorld2(37)
 console.log(brazil2, argentina2, canada2)
+*/
+// ====
+// Arrow Functions
+// ====
+const percentageOfWorld3 = (population, country) =>
+	`${country} has ${(population / 7900) * 100}% of the world's population`
+
+console.log(percentageOfWorld3(211, 'Brazil'))
