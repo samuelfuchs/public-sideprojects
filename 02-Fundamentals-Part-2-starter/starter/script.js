@@ -180,3 +180,70 @@ function calcAge(birthYear, firstName) {
 // age -> variable to save returned value (func output)
 const age = calcAge(1991, 'Samuel')
 */
+// ====
+// Introduction to Arrays
+// ====
+
+// () -> parenteses
+// [] -> colchetes, parenteses retos
+// {} -> chaves, chavetas
+
+// Our first data structure
+const friend1 = 'Michael'
+const friend2 = 'Steven'
+const friend3 = 'Peter'
+
+// Arrays are like a big container that has structure and we can later reference it
+// Array and Objects are the 2 biggest data structures ..at least in JS
+// more usual to create array this way:
+const friends = ['Michael', 'Steven', 'Peter']
+console.log(friends)
+
+// another way to create array
+const y = new Array(1991, 1984, 2000, 2020)
+
+//Arrays are 0-based - first element is #0
+console.log(friends[0])
+console.log(friends[2])
+
+// length-> property (not 0-based)
+console.log(friends.length)
+// get last element of an array
+console.log(friends[friends.length - 1])
+
+// Inside [] JS expects an expression, not an statement
+
+friends[2] = 'Jay'
+console.log(friends)
+
+// WAIT?! const-variables are changeable???
+// actually, only primitive values are immutable
+// an array is not a primitive value, so it's mutable
+// we CANNOT replace the array with another entirely new one
+
+// Array with different types
+const firstName = 'Samuel'
+const samuel = [firstName, 'Fuchs', 2037 - 1990, 'teacher', friends]
+console.log(samuel)
+
+// Exercise
+const calcAge = function (birthYear) {
+	return 2037 - birthYear
+}
+
+const years = [1990, 1967, 2002, 2010, 2018]
+console.log(calcAge(years))
+
+// it's not possible to do: calcAge(years) -> JS doesn't know what to do with it. We get NaN. We cannot do operations with arrays
+const age1 = calcAge(years[0])
+const age2 = calcAge(years[1])
+const age3 = calcAge(years[years.length - 1])
+console.log(age1, age2, age3)
+
+// create a new array
+const ages = [
+	calcAge(years[0]),
+	calcAge(years[1]),
+	calcAge(years[years.length - 1]),
+]
+console.log(ages)

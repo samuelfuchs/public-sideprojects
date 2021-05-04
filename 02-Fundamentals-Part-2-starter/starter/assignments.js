@@ -60,7 +60,7 @@ function percentageOfWorld1(population) {
 }
 
 console.log(describePopulation(211, 'Brazil'))
-*/
+
 // ====
 // Coding Challenge #1
 // ====
@@ -88,3 +88,7 @@ function checkWinner(avgDolphins1, avgKoalas1) {
 
 console.log(avgDolphins1, avgKoalas1)
 checkWinner(avgDolphins1, avgKoalas1)
+*/
+// ====
+// Introduction to Arrays
+// ====
