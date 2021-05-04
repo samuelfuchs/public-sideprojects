@@ -85,7 +85,7 @@ console.log(age2)
 // we can call func declarations before defining in the code
 
 // which type do i use? personal preference!
-*/
+
 // ====
 // Arrow Functions
 // ====
@@ -109,3 +109,23 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 
 console.log(yearsUntilRetirement(1990, 'Samuel'))
 console.log(yearsUntilRetirement(1980, 'Bob'))
+*/
+// ====
+// Functions Calling Other Functions
+// ====
+
+// It's common to one func to call another func
+
+function cutFruitPieces(fruit) {
+	return fruit * 4
+}
+
+function fruitProcessor(apples, oranges) {
+	const applePieces = cutFruitPieces(apples)
+	const orangePieces = cutFruitPieces(oranges)
+
+	const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`
+	return juice
+}
+
+console.log(fruitProcessor(2, 3))
