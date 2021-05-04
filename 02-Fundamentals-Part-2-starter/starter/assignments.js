@@ -45,7 +45,7 @@ const percentageOfWorld3 = (population, country) =>
 	`${country} has ${(population / 7900) * 100}% of the world's population`
 
 console.log(percentageOfWorld3(211, 'Brazil'))
-*/
+
 // ====
 // Functions Calling Other Functions
 // ====
@@ -60,3 +60,31 @@ function percentageOfWorld1(population) {
 }
 
 console.log(describePopulation(211, 'Brazil'))
+*/
+// ====
+// Coding Challenge #1
+// ====
+// const calcAge3 = (birthYear) => 2037 - birthYear
+
+// const age3 = calcAge3(1990)
+// console.log(age3)
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3
+
+const avgDolphins1 = calcAverage(85, 54, 41)
+const avgKoalas1 = calcAverage(23, 34, 27)
+
+function checkWinner(avgDolphins1, avgKoalas1) {
+	if (avgDolphins1 >= 2 * avgKoalas1) {
+		console.log(`Dolphins win (${avgDolphins1} vs. ${avgKoalas1})`)
+	} else if (avgKoalas1 >= 2 * avgDolphins1) {
+		console.log(`Koalas win (${avgKoalas1} vs. ${avgDolphins1})`)
+	} else {
+		console.log(
+			`No one wins 😢. (Koalas: ${avgKoalas1} Dolphins: ${avgDolphins1})`
+		)
+	}
+}
+
+console.log(avgDolphins1, avgKoalas1)
+checkWinner(avgDolphins1, avgKoalas1)

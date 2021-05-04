@@ -59,6 +59,7 @@ const num = Number('23')
 // ====
 // Function Declarations vs. Expressions
 // ====
+
 // func declaration = using function keyword to declare a func, like declaring a variable
 // input is a parameter in this func
 //parameter is a bit like local variable available only inside the func
@@ -129,4 +130,53 @@ function fruitProcessor(apples, oranges) {
 }
 
 console.log(fruitProcessor(2, 3))
+
+// ====
+// Reviewing Functions
+// ====
+const calcAge = function (birthYear) {
+	return 2037 - birthYear
+}
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+	const age = calcAge(birthYear)
+	const retirement = 65 - age
+
+	if (retirement > 0) {
+		return retirement
+		// return immediatly exits and will not display the clg's
+		console.log(`${firstName} retires in ${retirement} years`)
+	} else {
+		console.log(`${firstName} has already retired 🎉`)
+		return -1
+	}
+
+	// return retirement
+	// return `${firstName} retires in ${retirement} years`
+}
+
+console.log(yearsUntilRetirement(1991, 'Samuel'))
+console.log(yearsUntilRetirement(1950, 'Mike'))
+
+// Func declaration: func that can be used before it's declared
+// Func expression: Essentially a func value stored in a variable
+// Arrow func: Great for a quick one-line func. Has no 'this' keyword
+
+// 3 different ways of writing functions, but they all work in a
+// similar way: receive input data, transform data, and the output data
+
+// Anatomy of a func
+// calcAge -> function name
+// birthYear/firstName -> parameters: placeholders to receite input values. Like local variables of a func
+function calcAge(birthYear, firstName) {
+	// func body: block of code that we want to reuse. Processes the func's input data
+	const age = 2037 - birthYear
+	console.log(`${firstName} is ${age} years old`)
+	// return statement to output a value from the function and terminate execution.
+	return age
+}
+// calling, running or invoking the function, using ()
+// 1991/'Samuel' -> arguments: actual values of func parameters, to input data
+// age -> variable to save returned value (func output)
+const age = calcAge(1991, 'Samuel')
 */
