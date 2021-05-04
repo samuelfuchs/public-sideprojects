@@ -70,7 +70,7 @@ function calcAge1(birthYear) {
 const age1 = calcAge1(1990)
 console.log(age1)
 
-// == function expression
+// == function expression - produce values
 // basically a func without name (called an anonnymous func)
 // It's basically an expression. Remember, expressions produce value
 // We use that value and store it in calcAge2, and this will, then, be the func
@@ -80,3 +80,8 @@ const calcAge2 = function (birthYear) {
 
 const age2 = calcAge2(1990)
 console.log(age2)
+
+// Main practical differences func declarations expressions
+// we can call func declarations before defining in the code
+
+// which type do i use? personal preference!
