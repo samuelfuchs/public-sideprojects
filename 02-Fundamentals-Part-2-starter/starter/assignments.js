@@ -92,3 +92,14 @@ checkWinner(avgDolphins1, avgKoalas1)
 // ====
 // Introduction to Arrays
 // ====
+const populations = [211, 37, 115, 80]
+console.log(populations.length === 4)
+const percentageOfWorld = (population) => (population / 7900) * 100
+const percentages = [
+	percentageOfWorld(populations[0]),
+	percentageOfWorld(populations[1]),
+	percentageOfWorld(populations[2]),
+	percentageOfWorld(populations[3]),
+]
+
+console.log(percentages)
