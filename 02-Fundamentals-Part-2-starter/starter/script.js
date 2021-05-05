@@ -179,7 +179,7 @@ function calcAge(birthYear, firstName) {
 // 1991/'Samuel' -> arguments: actual values of func parameters, to input data
 // age -> variable to save returned value (func output)
 const age = calcAge(1991, 'Samuel')
-*/
+
 // ====
 // Introduction to Arrays
 // ====
@@ -247,3 +247,49 @@ const ages = [
 	calcAge(years[years.length - 1]),
 ]
 console.log(ages)
+*/
+// ====
+// Basic Array Operations (Methods)
+// ====
+
+// Methods are built-in funktions that we can apply
+// They are somthing like array operations
+
+const friends = ['Michael', 'Steven', 'Peter']
+// push-method: add elements to an array
+// push is a function that we call, attached to the friends array
+// push actually outputs the new length
+const newLength = friends.push('Jay')
+console.log(friends)
+console.log(newLength)
+// unshift adds an element at the beginning of the array
+friends.unshift('John')
+console.log(friends)
+// remove elements
+// pop is opposite of push - removes the last element
+// no need to insert a value because it deletes the last one
+// also outputs something - the deleted items
+const popped = friends.pop()
+friends.pop()
+console.log(friends, popped)
+// unshift removes the first element
+// once again, it outputs the removed element
+friends.shift()
+console.log(friends)
+
+// How to know in what position an element is: indexOf()
+console.log(friends.indexOf('Steven'))
+console.log(friends.indexOf('Bob'))
+
+// to know if an element is in the array, we use includes
+// this is an ES6 feature. Outputs true/false
+
+console.log(friends.includes('Steven'))
+console.log(friends.includes('Bob'))
+// uses strict equality for the check, so it does not do type coersion
+friends.push(23)
+console.log(friends.includes('23'))
+// Good for using in conditionals
+if (friends.includes('Steven')) {
+	console.log('You have a friend called Steven')
+}
