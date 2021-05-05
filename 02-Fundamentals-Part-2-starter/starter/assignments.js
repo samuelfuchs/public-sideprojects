@@ -103,7 +103,27 @@ const percentages = [
 ]
 
 console.log(percentages)
-*/
+
 // ====
 // Basic Array Operations (Methods)
 // ====
+const neighbours = [
+	'Argentina',
+	'Peru',
+	'Uruguay',
+	'Paraguay',
+	'Bolivia',
+	'Colombia',
+]
+
+neighbours.push('Utopia')
+console.log(neighbours)
+neighbours.pop()
+console.log(neighbours)
+
+if (!neighbours.includes('Germay')) {
+	console.log('Probably not a central European country! 😁')
+}
+neighbours[2] = 'Sweden'
+console.log(neighbours)
+*/
