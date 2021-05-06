@@ -384,3 +384,56 @@ console.log(
 )
 // mdn operator precedence
 */
+
+// ====
+// Object Methods
+// ====
+
+// possible to hold objects inside objects
+// function is just a value
+const samuel = {
+	firstName: 'Samuel',
+	lastName: 'Fuchs',
+	birthYear: 1990,
+	job: 'teacher',
+	friends: ['Michael', 'Peter', 'Jay'],
+	hasDriversLicense: true,
+	// this is a function expression inside an object:
+	// Function attached to an object is called a method
+	// calcAge: function (birthYear) {
+	// 	return 2037 - birthYear
+	// },
+	// This is a func declaration and it does not work here:
+	// function calcAge(birthYear) {
+	// 	return 2037 - birthYear
+	// }
+
+	// using this keyword to access parameters from within the object
+	// calcAge: function () {
+	// 	// 'this' is the whole object
+	// 	// console.log(this)
+	// 	// we don't write 'samuel.birthYear' because that's agains the DRY principle as well. If we were to alter the name of this object, 'samuel.' would not work properly anymore
+	// 	return 2037 - this.birthYear
+	// },
+	calcAge: function () {
+		this.age = 2037 - this.birthYear
+
+		return this.age
+	},
+	getSummary: function () {
+		return `${this.firstName} is a ${this.calcAge()}-year old ${
+			this.job
+		}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+	},
+}
+// This is not ideal: we infringe the DRY principle
+console.log(samuel.calcAge())
+// console.log(samuel['calcAge'](1990))
+
+console.log(samuel.age)
+console.log(samuel.age)
+console.log(samuel.age)
+
+// Challenge
+// Jonas is a 46-year old teacher, and he has a (no) driver's license
+console.log(samuel.getSummary())
