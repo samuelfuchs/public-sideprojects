@@ -171,3 +171,21 @@ console.log(myCountry)
 // ====
 // Dot vs. Bracket Notation
 // ====
+const myCountry = {
+	country: 'Brazil',
+	capital: 'Brasilia',
+	language: 'portuguese',
+	population: 211,
+	neighbours: [
+		'Argentina',
+		'Peru',
+		'Uruguay',
+		'Paraguay',
+		'Bolivia',
+		'Colombia',
+	],
+}
+
+console.log(
+	`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
+)

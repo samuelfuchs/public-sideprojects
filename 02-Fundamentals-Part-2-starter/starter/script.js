@@ -329,7 +329,7 @@ const samuel = {
 
 // Objects for more unstructured data
 // Arrays for more ordered data
-*/
+
 
 // ====
 // Dot vs. Bracket Notation
@@ -383,3 +383,4 @@ console.log(
 	`${samuel.firstName} has ${samuel.friends.length} friends, and his best friend is called ${samuel.friends[0]}.`
 )
 // mdn operator precedence
+*/
