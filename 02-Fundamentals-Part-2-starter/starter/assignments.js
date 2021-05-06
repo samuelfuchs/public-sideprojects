@@ -190,3 +190,28 @@ console.log(
 	`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
 )
 */
+
+// ====
+// Object Methods
+// ====
+const myCountry = {
+	country: 'Brazil',
+	capital: 'Brasilia',
+	language: 'portuguese',
+	population: 211,
+	neighbours: [
+		'Argentina',
+		'Peru',
+		'Uruguay',
+		'Paraguay',
+		'Bolivia',
+		'Colombia',
+	],
+	checkIsland: this.neighbours ? true : false,
+	describe: function () {
+		return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`
+	},
+}
+//this.hasDriversLicense ? 'a' : 'no'
+console.log(myCountry.describe())
+console.log(myCountry.checkIsland)

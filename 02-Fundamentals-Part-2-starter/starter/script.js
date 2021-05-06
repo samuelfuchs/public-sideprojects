@@ -383,7 +383,7 @@ console.log(
 	`${samuel.firstName} has ${samuel.friends.length} friends, and his best friend is called ${samuel.friends[0]}.`
 )
 // mdn operator precedence
-*/
+
 
 // ====
 // Object Methods
@@ -437,3 +437,4 @@ console.log(samuel.age)
 // Challenge
 // Jonas is a 46-year old teacher, and he has a (no) driver's license
 console.log(samuel.getSummary())
+*/
