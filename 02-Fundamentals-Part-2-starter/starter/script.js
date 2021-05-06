@@ -438,3 +438,21 @@ console.log(samuel.age)
 // Jonas is a 46-year old teacher, and he has a (no) driver's license
 console.log(samuel.getSummary())
 */
+
+// ====
+// Iteration: The for Loop
+// ====
+
+// Loops are control structures, like if/else statements
+// automate repetetive tasks
+
+// when you go to the gym you do 10 reps of one exercise.
+
+// console.log('Lifting weights repetition 1 🏋️‍♀️')
+// For loop - has a counter - has 3 parts
+// part 1 - initial value of counter. Use let because it will later be updated by the counter
+// part 2 - logical condition that is evaluated before each evaluation of the loop. If condition is true, the loop will run. If it is false, the loop stops
+// part 3 - update counter after each iteration
+for (let rep = 1; rep <= 10; rep++) {
+	console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`)
+}

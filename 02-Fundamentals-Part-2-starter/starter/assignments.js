@@ -215,7 +215,7 @@ const myCountry = {
 //this.hasDriversLicense ? 'a' : 'no'
 console.log(myCountry.describe())
 console.log(myCountry.checkIsland)
-*/
+
 
 // ====
 // Coding Challenge #3
@@ -260,3 +260,4 @@ if (mark.bmi > john.bmi) {
 		`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`
 	)
 }
+*/
