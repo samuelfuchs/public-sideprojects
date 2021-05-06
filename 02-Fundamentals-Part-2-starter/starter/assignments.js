@@ -261,3 +261,11 @@ if (mark.bmi > john.bmi) {
 	)
 }
 */
+
+// ====
+// Iteration: The for Loop
+// ====
+
+for (let voters = 1; voters <= 50; voters++) {
+	console.log(`Voter number ${voters} is currently voting`)
+}

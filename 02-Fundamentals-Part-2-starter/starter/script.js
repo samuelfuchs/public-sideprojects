@@ -437,7 +437,7 @@ console.log(samuel.age)
 // Challenge
 // Jonas is a 46-year old teacher, and he has a (no) driver's license
 console.log(samuel.getSummary())
-*/
+
 
 // ====
 // Iteration: The for Loop
@@ -456,3 +456,4 @@ console.log(samuel.getSummary())
 for (let rep = 1; rep <= 10; rep++) {
 	console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`)
 }
+*/
