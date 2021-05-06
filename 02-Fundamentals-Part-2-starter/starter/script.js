@@ -247,7 +247,7 @@ const ages = [
 	calcAge(years[years.length - 1]),
 ]
 console.log(ages)
-*/
+
 // ====
 // Basic Array Operations (Methods)
 // ====
@@ -293,3 +293,4 @@ console.log(friends.includes('23'))
 if (friends.includes('Steven')) {
 	console.log('You have a friend called Steven')
 }
+*/
