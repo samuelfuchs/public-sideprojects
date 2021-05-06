@@ -460,7 +460,7 @@ for (let rep = 1; rep <= 10; rep++) {
 // ====
 // Looping Arrays, Breaking and Continuing
 // ====
-*/
+
 const jonas = [
 	'Jonas',
 	'Schmedtmann',
@@ -510,3 +510,4 @@ for (let i = 0; i < jonas.length; i++) {
 	if (typeof jonas[i] === 'number') break
 	console.log(jonas[i], typeof jonas[i])
 }
+*/

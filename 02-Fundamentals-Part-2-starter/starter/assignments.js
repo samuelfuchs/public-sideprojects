@@ -270,3 +270,14 @@ for (let voters = 1; voters <= 50; voters++) {
 	console.log(`Voter number ${voters} is currently voting`)
 }
 */
+// ====
+// Looping Arrays, Breaking and Continuing
+// ====
+const populations = [211, 37, 115, 80]
+const percentages2 = []
+
+for (let i = 0; i < populations.length; i++) {
+	percentages2.push((populations[i] / 7900) * 100)
+}
+
+console.log(percentages2)
