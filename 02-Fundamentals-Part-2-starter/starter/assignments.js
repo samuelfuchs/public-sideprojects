@@ -147,4 +147,24 @@ console.log(tips)
 const totalBills = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
 console.log(totalBills)
 // )
+
+
+// ====
+// Introduction to Objects
+// ====
+const myCountry = {
+	country: 'Brazil',
+	capital: 'Brasilia',
+	language: 'portuguese',
+	population: 211,
+	neighbours: [
+		'Argentina',
+		'Peru',
+		'Uruguay',
+		'Paraguay',
+		'Bolivia',
+		'Colombia',
+	],
+}
+console.log(myCountry)
 */
