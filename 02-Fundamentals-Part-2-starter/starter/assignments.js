@@ -189,7 +189,7 @@ const myCountry = {
 console.log(
 	`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
 )
-*/
+
 
 // ====
 // Object Methods
@@ -215,3 +215,48 @@ const myCountry = {
 //this.hasDriversLicense ? 'a' : 'no'
 console.log(myCountry.describe())
 console.log(myCountry.checkIsland)
+*/
+
+// ====
+// Coding Challenge #3
+// ====
+
+// BMI ) mass / height ** 2 (mass / (height * height))
+//Test data
+// Mark: 78kg / 1.69m
+// John: 92kg / 1.95m
+
+const mark = {
+	fullName: 'Mark Miller',
+	mass: 78,
+	height: 1.69,
+	calcBMI: function () {
+		this.bmi = this.mass / (this.height * this.height)
+
+		return this.bmi
+	},
+}
+
+const john = {
+	fullName: 'John Smith',
+	mass: 92,
+	height: 1.95,
+	calcBMI: function () {
+		this.bmi = this.mass / this.height ** 2
+
+		return this.bmi
+	},
+}
+
+console.log(mark.calcBMI())
+console.log(john.calcBMI())
+
+if (mark.bmi > john.bmi) {
+	console.log(
+		`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`
+	)
+} else if (john.bmi > mark.bmi) {
+	console.log(
+		`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`
+	)
+}
