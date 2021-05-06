@@ -168,3 +168,6 @@ const myCountry = {
 }
 console.log(myCountry)
 */
+// ====
+// Dot vs. Bracket Notation
+// ====

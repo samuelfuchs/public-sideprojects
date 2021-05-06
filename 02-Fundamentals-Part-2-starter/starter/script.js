@@ -330,3 +330,56 @@ const samuel = {
 // Objects for more unstructured data
 // Arrays for more ordered data
 */
+
+// ====
+// Dot vs. Bracket Notation
+// ====
+const samuel = {
+	firstName: 'Samuel',
+	lastName: 'Fuchs',
+	age: 2037 - 1990,
+	job: 'teacher',
+	friends: ['Michael', 'Peter', 'Jay'],
+}
+console.log(samuel)
+
+// getting a property of an object
+// using the dot notation
+console.log(samuel.lastName)
+// using the bracket notation - ability to do more things
+// we can put expressions in the brackets
+console.log(samuel['lastName'])
+
+const nameKey = 'Name'
+console.log(samuel['first' + nameKey])
+console.log(samuel['last' + nameKey])
+
+// console.log(samuel.'last' + nameKey) // not possible
+
+// when to use dot vs brackets
+// when we need to first compute something, we use the bracket notation
+// the dot notation is cleaner looking and easier to use
+
+// const interestedIn = prompt(
+// 	'What do you want to know about Samuel? Choose between firstName, lastName, age, job, and frieds'
+// )
+
+// if (samuel[interestedIn]) {
+// 	console.log(samuel[interestedIn])
+// } else {
+// 	console.log(
+// 		'Wrong request! Choose between firstName, lastName, age, job, and frieds'
+// 	)
+// }
+
+// add new property to the object
+samuel.location = 'Portugal'
+samuel['twitter'] = '@samuelfuchs'
+console.log(samuel)
+
+// challenge
+// Jonas has 3 friends, and his best friend is called michael.
+console.log(
+	`${samuel.firstName} has ${samuel.friends.length} friends, and his best friend is called ${samuel.friends[0]}.`
+)
+// mdn operator precedence
