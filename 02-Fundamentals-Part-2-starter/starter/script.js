@@ -294,3 +294,38 @@ if (friends.includes('Steven')) {
 	console.log('You have a friend called Steven')
 }
 */
+
+// ====
+// Introduction to Objects
+// ====
+
+// We know, intuitevly, that the first element is firstName, then lastName
+const samuelsArray = [
+	'Samuel',
+	'Fuchs',
+	2037 - 1990,
+	'teacher',
+	['Michael', 'Peter', 'Jay'],
+]
+// Objects - we define key value pairs
+// We use the {} - to define new object
+// each key has a value, aka property
+// the samuel object has 5 properties
+
+//this is called an object literal (leterally writing down the object content)
+const samuel = {
+	firstName: 'Samuel',
+	lastName: 'Fuchs',
+	age: 2037 - 1990,
+	job: 'teacher',
+	friends: ['Michael', 'Peter', 'Jay'],
+}
+// Objects are the most fundamental thing in JS
+// there are many ways to create an object
+
+// Arrays vs Objects
+// Objects - the order does not matter when we want to retrieve them
+// Arrays - we access the elements by order number
+
+// Objects for more unstructured data
+// Arrays for more ordered data
