@@ -511,3 +511,6 @@ for (let i = 0; i < jonas.length; i++) {
 	console.log(jonas[i], typeof jonas[i])
 }
 */
+// ====
+// Looping Backwards and Loops in Loops
+// ====

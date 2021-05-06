@@ -269,7 +269,7 @@ if (mark.bmi > john.bmi) {
 for (let voters = 1; voters <= 50; voters++) {
 	console.log(`Voter number ${voters} is currently voting`)
 }
-*/
+
 // ====
 // Looping Arrays, Breaking and Continuing
 // ====
@@ -281,3 +281,7 @@ for (let i = 0; i < populations.length; i++) {
 }
 
 console.log(percentages2)
+*/
+// ====
+// Looping Backwards and Loops in Loops
+// ====
