@@ -537,3 +537,33 @@ for (let exercise = 1; exercise < 4; exercise++) {
 	}
 }
 */
+// ====
+// The while Loop
+// ====
+
+// for loop:
+// for (let rep = 1; rep <= 10; rep++) {
+// 	console.log(`Lifting weights repetition ${rep}`)
+// }
+// while loop: we still need the same values
+// will run while the condition is true
+// we write the condition manually outside
+
+// All the while loop needs is the condition
+// sometimes all we need is the condition, without a counter increasing
+let rep = 1
+while (rep <= 10) {
+	// console.log(`WHILE: Lifting weights repetition ${rep}`)
+	rep++
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1
+// console.log(dice)
+
+// when dice === 6, the loop doesnt even start
+// no way of knowing how many loops we need to get the task done
+while (dice !== 6) {
+	console.log(`You rolled a ${dice}`)
+	dice = Math.trunc(Math.random() * 6) + 1
+	if (dice === 6) console.log('Loop is about to end...')
+}
