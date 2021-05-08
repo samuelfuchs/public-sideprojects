@@ -298,4 +298,28 @@ for (let i = 0; i < listOfNeighbours.length; i++) {
 		console.log(`Neighbour: ${listOfNeighbours[i][country]}`)
 	}
 }
+
+// ====
+// The while Loop
+// ====
+
+const populations = [211, 37, 115, 80]
+const percentages3 = []
+let i = 0
+
+while (i < populations.length) {
+	const perc = percentageOfWorld1(populations[i])
+	percentages3.push(perc)
+	i++
+}
+
+// for (let i = 0; i < populations.length; i++) {
+// 	percentages2.push((populations[i] / 7900) * 100)
+// }
+
+// let rep = 1
+// while (rep <= 10) {
+// 	// console.log(`WHILE: Lifting weights repetition ${rep}`)
+// 	rep++
+// }
 */
