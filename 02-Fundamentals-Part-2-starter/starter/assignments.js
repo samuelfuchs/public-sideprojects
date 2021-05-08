@@ -285,3 +285,17 @@ console.log(percentages2)
 // ====
 // Looping Backwards and Loops in Loops
 // ====
+const jonas = [
+	'Jonas',
+	'Schmedtmann',
+	2037 - 1991,
+	'teacher',
+	['Michael', 'Peter', 'Steven'],
+]
+
+// Loop backwards: using i--
+for (let i = jonas.length - 1; i >= 0; i--) {
+	console.log(i, jonas[i])
+}
+
+// create a looop inside a loop
