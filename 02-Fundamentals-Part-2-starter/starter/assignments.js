@@ -322,7 +322,7 @@ while (i < populations.length) {
 // 	// console.log(`WHILE: Lifting weights repetition ${rep}`)
 // 	rep++
 // }
-*/
+
 // ====
 // Coding Challenge #4
 // ====
@@ -366,3 +366,4 @@ console.log(calcAverage([2, 3, 7]))
 console.log(calcAverage(totals))
 console.log(calcAverage(tips))
 console.log(bills, tips, totals)
+*/
