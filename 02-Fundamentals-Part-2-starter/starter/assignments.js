@@ -323,3 +323,46 @@ while (i < populations.length) {
 // 	rep++
 // }
 */
+// ====
+// Coding Challenge #4
+// ====
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+let tips = []
+let totals = []
+
+function calcTip(bill) {
+	if (bill >= 50 && bill <= 300) {
+		return (bill * 15) / 100
+	} else {
+		return (bill * 20) / 100
+	}
+}
+
+for (let i = 0; i < bills.length; i++) {
+	const tip = calcTip(bills[i])
+	tips.push(tip)
+	totals.push(bills[i] + tip)
+}
+
+function calcAverage(arr) {
+	let sum = 0
+	for (let i = 0; i < arr.length; i++) {
+		// sum = sum + arr[i]
+		sum += +arr[i]
+	}
+	return sum / arr.length
+}
+
+// const populations = [211, 37, 115, 80]
+// const percentages2 = []
+
+// for (let i = 0; i < populations.length; i++) {
+// 	percentages2.push((populations[i] / 7900) * 100)
+// }
+
+// console.log(percentages2)
+
+console.log(calcAverage([2, 3, 7]))
+console.log(calcAverage(totals))
+console.log(calcAverage(tips))
+console.log(bills, tips, totals)
