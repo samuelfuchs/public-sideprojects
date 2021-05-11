@@ -367,3 +367,4 @@ console.log(calcAverage(totals))
 console.log(calcAverage(tips))
 console.log(bills, tips, totals)
 */
+// fandoam
