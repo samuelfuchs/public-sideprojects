@@ -367,4 +367,27 @@ console.log(calcAverage(totals))
 console.log(calcAverage(tips))
 console.log(bills, tips, totals)
 */
-// fandoam
+
+// ====
+// Debugging with the Console and Breakpoints
+// ====
+const measureKelvin = function () {
+	const measurement = {
+		type: 'temp',
+		unit: 'celsius',
+
+		// C: FiX bug
+		value: Number(prompt('Degrees celsius')),
+	}
+
+	// B: Find bug
+	// console.log(measurement)
+	console.table(measurement)
+	// console.log(measurement.value)
+	// console.warn(measurement.value)
+	// console.error(measurement.value)
+	const kelvin = measurement.value + 273
+	return kelvin
+}
+// A: Identify bug
+console.log(measureKelvin())
