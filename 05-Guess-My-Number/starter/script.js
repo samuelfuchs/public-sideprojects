@@ -28,10 +28,37 @@ Handling Click Events
 // 'click' is the type of the event, the second arguement is a func
 // Remember: a func is just an value, so we put it in here
 // The func will only be called when the event happens
+// document.querySelector('.check').addEventListener('click', function () {
+//   const guess = Number(document.querySelector('.guess').value);
+//   console.log(typeof guess);
+//   if (!guess) {
+//     document.querySelector('.message').textContent = '⛔ No number!';
+//   }
+// });
+/* ===========
+Implementing the Game Logic
+=========== */
+// Make secret number
+// Math.trunc 'removes' noise
+const secretNumber = Math.trunc(Math.random() * 20) + 1;
+// this will change, part of the state of the code
+let score = 20;
+document.querySelector('.number').textContent = secretNumber;
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(typeof guess);
   if (!guess) {
     document.querySelector('.message').textContent = '⛔ No number!';
+  } else if (guess === secretNumber) {
+    document.querySelector('.message').textContent = 'Correct Number! 🎉';
+  } else if (guess > secretNumber) {
+    document.querySelector('.message').textContent = '↗ Too high!';
+    score--;
+    document.querySelector('.score').textContent = score;
+  } else if (guess < secretNumber) {
+    document.querySelector('.message').textContent = '↘ Too low!';
+    score--;
+    document.querySelector('.score').textContent = score;
   }
 });
