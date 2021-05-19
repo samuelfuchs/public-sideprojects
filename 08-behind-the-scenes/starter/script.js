@@ -32,7 +32,7 @@ calcAge(1991);
 /* ==========
 Hoisting and TDZ in Practice
 ========== */
-
+/*
 // Hoisting with variables
 console.log(me);
 // console.log(job);
@@ -70,3 +70,4 @@ function deleteShoppingCart() {
 var x = 1;
 let y = 2;
 const z = 3;
+*/
