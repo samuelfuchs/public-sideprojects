@@ -1,8 +1,8 @@
 'use strict';
 
-/* ==========
-Scoping in Practice
-========== */
+// ==========
+// Scoping in Practice
+// ==========
 /*
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
@@ -29,9 +29,9 @@ const firstName = 'Jonas';
 calcAge(1991);
 */
 
-/* ==========
-Hoisting and TDZ in Practice
-========== */
+// ==========
+// Hoisting and TDZ in Practice
+// ==========
 /*
 // Hoisting with variables
 console.log(me);
@@ -71,9 +71,10 @@ var x = 1;
 let y = 2;
 const z = 3;
 */
-/* ==========
-The this Keyword in Practice
-========== */
+// ==========
+// The this Keyword in Practice
+// ==========
+/*
 // console.log(this); // window - global scope
 
 const calcAge = function (birthYear) {
@@ -107,3 +108,7 @@ matilda.calcAge(); // matilda calls the method, so matilda will be pointed to wi
 
 const f = jonas.calcAge;
 f();
+*/
+// ==========
+// XYZ
+// ==========
