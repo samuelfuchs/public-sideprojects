@@ -112,7 +112,7 @@ f();
 // ==========
 // Regular Functions vs. Arrow Functions
 // ==========
-
+/*
 // this is not a code block:
 // it's an object literal
 // all of this is in the global scope
@@ -158,3 +158,23 @@ var addArrow = (a, b) => {
   return a + b;
 };
 addArrow(2, 5, 8);
+*/
+// ==========
+// Primitives vs. Objects (Primitive vs. Reference Types)
+// ==========
+
+let age = 30;
+let oldAge = age; // at this point, age=30
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+
+const friend = me;
+friend.age = 27; // changes the age of the 'me' object as well
+console.log('Friend: ', friend);
+console.log('Jonas: ', me);
