@@ -71,3 +71,39 @@ var x = 1;
 let y = 2;
 const z = 3;
 */
+/* ==========
+The this Keyword in Practice
+========== */
+// console.log(this); // window - global scope
+
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  // console.log(this); // undefined
+};
+calcAge(1991);
+
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  // console.log(this); // uses this of parent func
+};
+calcAgeArrow(1991);
+
+const jonas = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this); // jonas object
+    console.log(2037 - this.year);
+  },
+};
+jonas.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+
+// method borowing. Copied a func inside an object into another object
+matilda.calcAge = jonas.calcAge;
+matilda.calcAge(); // matilda calls the method, so matilda will be pointed to with the 'this' keyword
+
+const f = jonas.calcAge;
+f();
