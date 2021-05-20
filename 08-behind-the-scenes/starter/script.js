@@ -113,13 +113,48 @@ f();
 // Regular Functions vs. Arrow Functions
 // ==========
 
+// this is not a code block:
+// it's an object literal
+// all of this is in the global scope
 const jonas = {
   firstName: 'Jonas',
   year: 1991,
   calcAge: function () {
     console.log(this);
     console.log(2037 - this.year);
+
+    // solution 1
+    // before ES6 we used to define the 'this' keyword with self or that
+    // const self = this; // self or that
+    // const isMillenial = function () {
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+    // isMillenial();
+
+    // solution 2
+    // using an arrow func
+    // arrow func uses the 'this' keyword from its parent scope
+    const isMillenial = () => {
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
   },
   greet: () => console.log(`Hey ${this.firstName}`),
 };
 jonas.greet();
+jonas.calcAge();
+
+// Arguments keyword
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 8, 12);
+
+// arguments only exists in regular functions, not in arrow functions. it's not that important anymore
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 5, 8);
