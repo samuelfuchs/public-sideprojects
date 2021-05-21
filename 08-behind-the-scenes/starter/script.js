@@ -158,7 +158,7 @@ var addArrow = (a, b) => {
   return a + b;
 };
 addArrow(2, 5, 8);
-*/
+
 // ==========
 // Primitives vs. Objects (Primitive vs. Reference Types)
 // ==========
@@ -178,3 +178,26 @@ const friend = me;
 friend.age = 27; // changes the age of the 'me' object as well
 console.log('Friend: ', friend);
 console.log('Jonas: ', me);
+*/
+
+// ==========
+// Primitives vs. Objects in Practice
+// ==========
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+const john = {
+  firstName: 'john',
+  lastName: 'Williams',
+  age: 27,
+};
+
+// we are only copying the reference of the object
+const marriedJohn = john;
+marriedJohn.lastName = 'Davis';
+console.log('Before marriage: ', john);
+console.log('After marriage: ', marriedJohn);
+
+// 3381-6800
