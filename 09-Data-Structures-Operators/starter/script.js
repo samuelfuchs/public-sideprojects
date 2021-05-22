@@ -15,6 +15,22 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  // we can do destructuring right away
+  // since we did that, we have 4 variable names
+  // we get the string based on the values we passed in down below ***
+  // as we receive the object passed in we do imediate destructuring
+  // the names have to be exactly the same as the ones we pass in
+  // we can even specify default vaules!!
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 
   openingHours: {
     thu: {
@@ -32,6 +48,59 @@ const restaurant = {
   },
 };
 
+// ***
+// this is the object we pass in
+// the order is actually not important
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+restaurant.orderDelivery({
+  address: 'Via del Solll, 21',
+  starterIndex: 1,
+});
+
+// extracting objects
+// order does not matter
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+// new variable names:
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// set default values (like in arrays)
+// there is no property named 'menu', so we set a default value
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables while destructuring
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+// Override a & b
+// when we initialize a line with '{}', JS expects a code block
+// {a, b} = obj
+// if we wrap everything in parenteses, we can do it without error
+({ a, b } = obj);
+console.log(a, b);
+
+// Nested objects - objects inside objects
+// we can further destructure objects:
+// giving open and close variables diffent names (o and c)
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
+
+/*
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -74,3 +143,4 @@ console.log(i, j, k);
 // giving default values so we don't get undefined
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+*/
