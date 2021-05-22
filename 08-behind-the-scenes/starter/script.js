@@ -183,11 +183,13 @@ console.log('Jonas: ', me);
 // ==========
 // Primitives vs. Objects in Practice
 // ==========
+// primitive types
 let lastName = 'Williams';
 let oldLastName = lastName;
 lastName = 'Davis';
 console.log(lastName, oldLastName);
 
+//Reference types
 const john = {
   firstName: 'john',
   lastName: 'Williams',
@@ -200,4 +202,25 @@ marriedJohn.lastName = 'Davis';
 console.log('Before marriage: ', john);
 console.log('After marriage: ', marriedJohn);
 
-// 3381-6800
+// Copying objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+// Make a REAL copy
+// only works on first level. Inner objects will still be the same
+// It's only a shallow copy
+// Not a deep clone.
+//Both objects have a nested object (family) which point to the same direction in the memory heap
+// for deep cloning we usually use external tools like lodash
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+
+// Family members still get updated equally
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
