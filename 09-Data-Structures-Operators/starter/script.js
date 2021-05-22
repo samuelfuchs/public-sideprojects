@@ -46,8 +46,71 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
 
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+// Spread operator
+// It's like taking all the elements out of the array and writing them down individually
+// We use it when we would otherwise write out each value seperately
+// Useful when we use Array Literals and to pass multiple values into functions
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr); // logs individual elements of the array, is the same as writing clg(1, 2, 7, 8, 9)
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci']; // completely new array
+console.log(newMenu);
+
+// spread operator takes all the elements from the array and it also doesn't create new variables, as consequence we can only use it in places where we would write values seperated by commas
+
+// Shallow copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays or more
+const meu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(meu);
+
+// Spread operator works on all 'iterals'
+// iteral: things like arrays, strings, maps, sets - but not objects
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+console.log(...str);
+
+// THIS DOES NOT WORK:
+// This is a place where JS doesn't expect values seperated by commas.
+// console.log(`${...str} Schmedtmann`)
+
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt("Let's make pasta! Ingredient 2?"),
+//   prompt("Let's make pasta! Ingredient 3?"),
+// ];
+// console.log(ingredients);
+// Instead of writing this:
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2])
+// we can write this:
+// restaurant.orderPasta(...ingredients);
+
+// It actually works on objects, even though they are not iterables.
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+/*
 // ***
 // this is the object we pass in
 // the order is actually not important
@@ -100,7 +163,7 @@ const {
 } = openingHours;
 console.log(o, c);
 
-/*
+
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
