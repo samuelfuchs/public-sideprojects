@@ -178,7 +178,7 @@ const friend = me;
 friend.age = 27; // changes the age of the 'me' object as well
 console.log('Friend: ', friend);
 console.log('Jonas: ', me);
-*/
+
 
 // ==========
 // Primitives vs. Objects in Practice
@@ -224,3 +224,4 @@ jessicaCopy.family.push('Mary');
 jessicaCopy.family.push('John');
 console.log('Before marriage: ', jessica2);
 console.log('After marriage: ', jessicaCopy);
+*/
