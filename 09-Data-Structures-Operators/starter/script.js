@@ -52,8 +52,56 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
+// DESTRUCTURING
+
+// Rest pattern and parameters
+// looks like spread operator but does the oposite
+// spread: unpacks an array - on the right hand side of the '=' sign
+// rest: pack into an array
+
+const arr = [1, 7, ...[3, 4]];
+// Rest, because on left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others); // 1, 2 get output as usual, after that, the rest operator takes the rest and puts them in a new array (others)
+
+// rest does not include any skipped element
+// for that reason, it should be the last element.
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// FUNCTIONS
+// rest syntax:
+// takes multiple values and puts them into an array
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(1, 3, 5, 7, 5, 2);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach'); // mushrooms (seperated) and then an array with the other ings
+restaurant.orderPizza('mushrooms'); // mushrooms + []
+
+/*
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
@@ -110,7 +158,7 @@ restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
 
-/*
+
 // ***
 // this is the object we pass in
 // the order is actually not important
