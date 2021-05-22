@@ -57,7 +57,47 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+console.log(' -------------- OR --------------');
+// && and || for short circutting
+// most used to combine boolean values, but we can do a lot more
 
+// ||- OPERATOR
+// use ANY data type
+// return ANY data type
+// short-circutting - if 1st value is truthy, it will immediatly stop
+
+console.log(3 || 'Jonas');
+console.log('' || 'jonas'); // jonas ('' is considered falsy)
+console.log(true || 0); // first is truthy
+console.log(undefined || null); // undefined is falsy and null is also falsy but is last
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // 'Hello' because it is the first truthy value of the operation
+
+// check if numGuests exists, if not, put value to 10
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1); // 10
+
+restaurant.numGuests = 23;
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); // if we comment-out numGuests, the log will output 10, OR if we put numGuests = 0. 0 is a falsy value!!!!
+
+console.log(' -------------- AND --------------');
+// AND operator works the same
+console.log(0 && 'jonas'); // 0, because 0 is falsy, so it outputs it
+console.log(7 && 'jonas'); // when it is truthy, so it continues
+
+console.log('Hello' && 23 && null && 'jonas'); // 'Hello' and 23 are truthy, null is falsy so it stops at null and doesn't even look ate jonas
+
+// Practical example
+// first, we check IF it exists
+// THEN we execute it!
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+// if orderPizza does not exist, it will short-circut out
+restaurant.orderPizza && restaurant.orderPizza('cheese', 'mayo');
+/*
 // DESTRUCTURING
 
 // Rest pattern and parameters
@@ -101,7 +141,7 @@ add(...x);
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach'); // mushrooms (seperated) and then an array with the other ings
 restaurant.orderPizza('mushrooms'); // mushrooms + []
 
-/*
+
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
