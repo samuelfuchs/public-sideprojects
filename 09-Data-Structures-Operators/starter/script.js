@@ -57,6 +57,21 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+// =======================
+// The Nullish Coalescing Operator (??)
+// =======================
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10; // 10
+console.log(guests);
+
+// Introduced in ES2020
+// Nullish values: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+/*
 console.log(' -------------- OR --------------');
 // && and || for short circutting
 // most used to combine boolean values, but we can do a lot more
@@ -97,7 +112,7 @@ if (restaurant.orderPizza) {
 
 // if orderPizza does not exist, it will short-circut out
 restaurant.orderPizza && restaurant.orderPizza('cheese', 'mayo');
-/*
+
 // DESTRUCTURING
 
 // Rest pattern and parameters
