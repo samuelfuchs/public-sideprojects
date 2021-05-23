@@ -62,6 +62,24 @@ const restaurant = {
 // =======================
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
+
+// this is called a for/of loop
+// will automatically loop through an array and in each iteration it gives us access to the current array element which we can specify (item)
+// the item variable will be the current array element in each iteration.
+// no need to write down counter and condition
+// still possible to use 'continue' and 'break'
+// if we need that index it's actually a bit of a pain: explained below (next example)
+// for/of loop was made to just give you the current element
+
+for (const item of menu) console.log(item);
+
+// destructuring
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+
 /*
 // =======================
 // The Nullish Coalescing Operator (??)
