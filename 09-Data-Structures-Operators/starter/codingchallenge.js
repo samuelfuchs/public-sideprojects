@@ -39,34 +39,32 @@ const game = {
   },
 };
 
-// const players1 = game.players[0];
-// const playersFinal = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-// const players2 = game.players[1];
+// 1.
 const [players1, players2] = game.players;
+// console.log(players1, players2);
+
+// 2
+const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
+
+// 3.
 const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
 
-// const team1 = game.odds.team1;
-// const draw = game.odds.x;
-// const team2 = game.odds.team2;
+// 4.
+const playersFinal = ['Thiago', 'Coutinho', 'Perisic', ...players1];
+// console.log(playersFinal);
 
-const testData = ['Davies', 'Muller', 'Lewandowski', 'Kimmich'];
-
-const printGoals = function (score, ...playerNames) {
-  console.log(
-    `The end result was ${score} and these players made the points: ${playerNames}`
-  );
-};
-printGoals(game.score, testData);
-printGoals(game.score, game.scored);
-
+// 5.
 const {
   odds: { team1, x: draw, team2 },
 } = game;
+console.log(team1, draw, team2);
 
-console.log(team1 || team2);
-// console.log(players1, players2);
-// console.log(allPlayers);
-// console.log(playersFinal);
-const [gk1, ...fieldPlayers1] = players1;
-const [gk2, ...fieldPlayers2] = players2;
-// console.log(gk1, fieldPlayers1, gk2, fieldPlayers2);
+// 6.
+const printGoals = function (numPlayers) {
+  console.log(numPlayers);
+};
+const testData = ['Davies', 'Muller', 'Lewandowski', 'Kimmich'];
+
+// 7.
