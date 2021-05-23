@@ -57,6 +57,11 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+// =======================
+// Looping Arrays: The for-of Loop
+// =======================
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
 /*
 // =======================
 // The Nullish Coalescing Operator (??)
