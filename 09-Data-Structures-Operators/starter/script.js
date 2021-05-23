@@ -58,7 +58,42 @@ const restaurant = {
   },
   openingHours,
 };
+// =======================
+// Optional Chaining (?.)
+// =======================
+// used comonly to check if a value is there or not
+// useful for APIs
+// optional chaining - ES2020 feature: if a certain property does not exist, then return undefined imediately
+//WITHOUT optional chaining:
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon);
+// WITH optional chaining:
+// only if the property before the question mark exists, the next will be read from there.
+// with nullish value, so 0 and '' are truthy values
+console.log(restaurant.openingHours?.mon?.open);
 
+//Example: we want to check if restaurant is open on each day
+// nullish + optional chaining
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  // console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day} , we open at ${open}`);
+}
+
+// optional chaining on methods
+// check if a method exists before using it.
+console.log(restaurant.order?.(0, 1) ?? 'method does not exist');
+// This does not exist:
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'method does not exist');
+
+// optional chaining on array
+// check if an array is empty
+const users = [{ name: 'Jonas', email: 'hello@say.com' }];
+
+console.log(users[0]?.name ?? 'User array empty');
+
+/*
 // =======================
 // Enhanced Object Literals
 // =======================
@@ -95,7 +130,7 @@ const whenOpen = {
     close: 24,
   },
 };
-/*
+
 // =======================
 // Looping Arrays: The for-of Loop
 // =======================
