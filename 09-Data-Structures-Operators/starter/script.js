@@ -1,5 +1,20 @@
 'use strict';
 
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -32,21 +47,6 @@ const restaurant = {
     );
   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-
   orderPasta: function (ing1, ing2, ing3) {
     console.log(
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
@@ -56,7 +56,46 @@ const restaurant = {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
+  openingHours,
 };
+
+// =======================
+// Enhanced Object Literals
+// =======================
+
+// 'restaurant' is an object literal
+
+// before ES6 we put an object inside an object, putting in
+// openingHours: openingHours;
+// inside it.
+// ES enhanced object literals
+// now we only write:
+// openingHours,
+
+// BUT, if we were to change the name of the object, we would have to change its name in the 'restaurant' object as well.
+
+// another new feature of ES6 is to ommit the 'function' word when declared inside an object.
+// orderDelivery: function ({...})
+// becomes:
+// orderDelivery({...})
+
+// compute = calculate
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const whenOpen = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${2 + 4}`]: {
+    open: 0,
+    close: 24,
+  },
+};
+/*
 // =======================
 // Looping Arrays: The for-of Loop
 // =======================
@@ -80,7 +119,7 @@ for (const [i, el] of menu.entries()) {
 
 // console.log([...menu.entries()]);
 
-/*
+
 // =======================
 // The Nullish Coalescing Operator (??)
 // =======================
