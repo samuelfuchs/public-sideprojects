@@ -43,25 +43,34 @@ const game = {
 // =====================
 // 1.
 for (const [pos, player] of game.scored.entries()) {
-  // console.log(`Goal ${pos}: ${player}`);
+  // console.log(`Goal ${pos + 1}: ${player}`);
 }
 
 // 2. Destruct game.odds and calculate the avg
-const {
-  odds: {
-    team1: chanceToWinTeam1,
-    x: chanceToWinDraw,
-    team2: chanceToWinTeam2,
-  },
-  team1: nameTeam1,
-  team2: nameTeam2,
-} = game;
-console.log((chanceToWinTeam1 + chanceToWinDraw + chanceToWinTeam2) / 3);
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
 
 // 3.
-console.log(`Odd of victory ${nameTeam1}: ${chanceToWinTeam1}`);
-console.log(`Odd of draw: ${chanceToWinDraw}`);
-console.log(`Odd of victory ${nameTeam2}: ${chanceToWinTeam2}`);
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+
+// const {
+//   odds: {
+//     team1: chanceToWinTeam1,
+//     x: chanceToWinDraw,
+//     team2: chanceToWinTeam2,
+//   },
+//   team1: nameTeam1,
+//   team2: nameTeam2,
+// } = game;
+// console.log(`Odd of victory ${nameTeam1}: ${chanceToWinTeam1}`);
+// console.log(`Odd of draw: ${chanceToWinDraw}`);
+// console.log(`Odd of victory ${nameTeam2}: ${chanceToWinTeam2}`);
 
 // =====================
 // Coding Challenge #1
