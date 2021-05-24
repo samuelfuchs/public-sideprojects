@@ -41,23 +41,23 @@ const game = {
 // =====================
 // Coding Challenge #2
 // =====================
-// 1.
-for (const [pos, player] of game.scored.entries()) {
-  // console.log(`Goal ${pos + 1}: ${player}`);
-}
+// // 1.
+// for (const [pos, player] of game.scored.entries()) {
+//   // console.log(`Goal ${pos + 1}: ${player}`);
+// }
 
-// 2. Destruct game.odds and calculate the avg
-const odds = Object.values(game.odds);
-let average = 0;
-for (const odd of odds) average += odd;
-average /= odds.length;
-console.log(average);
+// // 2. Destruct game.odds and calculate the avg
+// const odds = Object.values(game.odds);
+// let average = 0;
+// for (const odd of odds) average += odd;
+// average /= odds.length;
+// console.log(average);
 
-// 3.
-for (const [team, odd] of Object.entries(game.odds)) {
-  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-  console.log(`Odd of ${teamStr} ${odd}`);
-}
+// // 3.
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr} ${odd}`);
+// }
 
 // const {
 //   odds: {

@@ -58,7 +58,59 @@ const restaurant = {
   },
   openingHours,
 };
+
 /*
+// =======================
+// Sets
+// =======================
+// Prior to ES6, we had only Arrays and Objects in JS
+// Two more data structures were introduced: sets and maps
+
+// Alread exist in other programming language
+// set: collection of unique values.
+
+// We declare set as so: new Set()
+// After that we put in an iterable. The most comonly used is array
+
+// 1st: values are unique
+// 2nd: order is irrelevant - no indexes
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(ordersSet); // duplicates are actually gone
+
+console.log(new Set('Jonas'));
+
+console.log(ordersSet.size); // not length
+console.log(ordersSet.has('Pizza')); // similar to include-method in arr
+console.log(ordersSet.has('Bread'));
+
+ordersSet.add('Garlic Bread'); // adding
+ordersSet.add('Garlic Bread'); // basically ignored
+ordersSet.delete('Risotto'); // deleting
+// ordersSet.clear(); // deleting everithing
+console.log(ordersSet);
+
+// If all values are unique and the order doesn't matter, all we have to worry about is wether a value exists or not.
+// If the order is important, use an array
+
+// loop over sets
+for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// filter out duplicates
+// get only the unique items
+const staffUnique = [...new Set(staff)]; // If we want it to be an array:
+console.log(staffUnique);
+
+
 // =======================
 // Looping Objects: Object Keys, Values, and Entries
 // =======================
