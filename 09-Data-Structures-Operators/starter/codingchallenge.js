@@ -38,7 +38,34 @@ const game = {
     team2: 6.5,
   },
 };
+// =====================
+// Coding Challenge #2
+// =====================
+// 1.
+for (const [pos, player] of game.scored.entries()) {
+  // console.log(`Goal ${pos}: ${player}`);
+}
 
+// 2. Destruct game.odds and calculate the avg
+const {
+  odds: {
+    team1: chanceToWinTeam1,
+    x: chanceToWinDraw,
+    team2: chanceToWinTeam2,
+  },
+  team1: nameTeam1,
+  team2: nameTeam2,
+} = game;
+console.log((chanceToWinTeam1 + chanceToWinDraw + chanceToWinTeam2) / 3);
+
+// 3.
+console.log(`Odd of victory ${nameTeam1}: ${chanceToWinTeam1}`);
+console.log(`Odd of draw: ${chanceToWinDraw}`);
+console.log(`Odd of victory ${nameTeam2}: ${chanceToWinTeam2}`);
+
+// =====================
+// Coding Challenge #1
+// =====================
 // // 1.
 // const [players1, players2] = game.players;
 // // console.log(players1, players2);
