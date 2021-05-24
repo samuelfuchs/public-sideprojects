@@ -59,6 +59,41 @@ const restaurant = {
   openingHours,
 };
 // =======================
+// Looping Objects: Object Keys, Values, and Entries
+// =======================
+// Looping through objects (they are not iterables.)
+
+// Looping over property names (keys)
+
+// Prints out how many properties there are!
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property VALUES
+// Get only values of each key
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entries is names + values
+// we already did something similiar in for-of loop
+
+// Entire object
+const entries = Object.entries(openingHours);
+console.log(entries); // transforms obj into arr
+
+// To get each key and value:
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+/*
+// =======================
 // Optional Chaining (?.)
 // =======================
 // used comonly to check if a value is there or not
@@ -93,7 +128,7 @@ const users = [{ name: 'Jonas', email: 'hello@say.com' }];
 
 console.log(users[0]?.name ?? 'User array empty');
 
-/*
+
 // =======================
 // Enhanced Object Literals
 // =======================
