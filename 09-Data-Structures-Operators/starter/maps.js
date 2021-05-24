@@ -46,3 +46,4 @@ console.log(rest);
 console.log(rest.get([1, 2])); // this returns undefined, even though we set it 2 lines above.
 // in the heap it is not equal
 // in order to make it work, we would have to create an arr = [1,2] and then set the arr as value
+rest.set(document.querySelector('h1'), 'Heading');
