@@ -1,19 +1,19 @@
 'use strict';
 
-const openingHours = {
-  thu: {
-    open: 12,
-    close: 22,
-  },
-  fri: {
-    open: 11,
-    close: 23,
-  },
-  sat: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
+// const openingHours = {
+//   thu: {
+//     open: 12,
+//     close: 22,
+//   },
+//   fri: {
+//     open: 11,
+//     close: 23,
+//   },
+//   sat: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
 
 // Data needed for a later exercise
 const flights =
@@ -56,8 +56,21 @@ const restaurant = {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
-  openingHours,
+  // openingHours,
 };
+// =======================
+// Maps: Fundamentals
+// =======================
+
+// More useful than sets
+// Data structure to map values to keys
+// In JS, data is stored in key value pairs.
+
+// keys can have any types.
+// objects keys are always strings
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
 
 /*
 // =======================

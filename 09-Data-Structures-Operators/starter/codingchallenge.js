@@ -1,4 +1,4 @@
-const game = {
+/*const game = {
   team1: 'Bayern Munich',
   team2: 'Borussia Dortmund',
   players: [
@@ -38,6 +38,7 @@ const game = {
     team2: 6.5,
   },
 };
+*/
 // =====================
 // Coding Challenge #2
 // =====================
