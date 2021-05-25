@@ -2,7 +2,7 @@
 // =======================
 // Maps: Fundamentals
 // =======================
-
+/*
 // More useful than sets
 // Data structure to map values to keys
 // In JS, data is stored in key value pairs.
@@ -47,3 +47,4 @@ console.log(rest.get([1, 2])); // this returns undefined, even though we set it 
 // in the heap it is not equal
 // in order to make it work, we would have to create an arr = [1,2] and then set the arr as value
 rest.set(document.querySelector('h1'), 'Heading');
+*/
