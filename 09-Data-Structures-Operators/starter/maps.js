@@ -1,5 +1,76 @@
 'use stict';
 // =======================
+// Working With Strings - Part 2
+// =======================
+// Changing the case of a string
+
+const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+
+console.log(airline.toLowerCase()); // tap air portugal
+console.log(airline.toUpperCase()); // TAP AIR PORTUGAL
+
+// Fix capitalization in name
+const passenger = 'jOnAS'; // we want to get 'Jonas
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower);
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect); // Jonas
+
+// If you have time, you could create a function as well
+
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+
+// Seperate ways
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// Replace parts of strings
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.'); // chaining
+console.log(priceUS);
+
+// replace in its normal state only replaces the first occurance of the instance:
+// Very soon JS will have a method 'Replace all'
+const announcement =
+  'All passengers come to the boarding door 23. Boarding door 23!';
+console.log(announcement.replaceAll('door', 'gate'));
+
+// RegEx: One of the most complex and confused topics of programming
+console.log(announcement.replace(/door/g, 'gate')); // g stands for global
+
+// Boolean
+const plane = 'A320neo';
+console.log(plane.includes('A320')); // true
+console.log(plane.includes('Boeing')); // false
+console.log(plane.startsWith('Air')); // False
+
+if (plane.startsWith('A320') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const beggage = items.toLowerCase(); // convert to lowercase because Knife != knife
+  if (beggage.includes('knife') || beggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcom aboard');
+  }
+};
+checkBaggage('I have a laptop, some food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+/*
+// =======================
 // Working With Strings - Part 1
 // =======================
 // Strings are primitive, therefore impossible to mutate
@@ -41,7 +112,7 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
-/*
+
 // =======================
 // Summary: Which Data Structure to Use?
 // =======================
