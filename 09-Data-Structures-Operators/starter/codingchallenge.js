@@ -58,32 +58,32 @@ const gameEvents = new Map([
 // Coding Challenge #3
 // =====================
 
-// 1. Create an array 'events' of the different game events that happened (no duplicates)
-// const events = new Set(gameEvents.values()); // 1st: Get only the values
-const events = [...new Set(gameEvents.values())]; // 2nd: create the spread operator to unpack the set
-console.log(events);
+// // 1. Create an array 'events' of the different game events that happened (no duplicates)
+// // const events = new Set(gameEvents.values()); // 1st: Get only the values
+// const events = [...new Set(gameEvents.values())]; // 2nd: create the spread operator to unpack the set
+// console.log(events);
 
-// 2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
-gameEvents.delete(64);
+// // 2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
+// gameEvents.delete(64);
 
-// 3. Compute and log the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
-console.log(
-  `An event happened, on average, every ${90 / gameEvents.size} minutes`
-);
-// Pop takes only the last element
-const time = [...gameEvents.keys()].pop(); // The [...xxx] is to create an array
+// // 3. Compute and log the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes`
+// );
+// // Pop takes only the last element
+// const time = [...gameEvents.keys()].pop(); // The [...xxx] is to create an array
 
-console.log(time);
-console.log(
-  `An event happened, on average, every ${time / gameEvents.size} minutes`
-);
+// console.log(time);
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes`
+// );
 
-// 4. Loop over 'gameEvents' and log each element to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this: [FIRST HALF] 17: ⚽ GOAL
+// // 4. Loop over 'gameEvents' and log each element to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this: [FIRST HALF] 17: ⚽ GOAL
 
-for (const [min, event] of gameEvents) {
-  const half = min <= 45 ? 'FIRST' : 'SECOND';
-  console.log(`[ ${half} HALF ] ${min}: ${event}`);
-}
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? 'FIRST' : 'SECOND';
+//   console.log(`[ ${half} HALF ] ${min}: ${event}`);
+// }
 
 // =====================
 // Coding Challenge #2

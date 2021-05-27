@@ -1,5 +1,47 @@
 'use stict';
+// =======================
+// Working With Strings - Part 1
+// =======================
+// Strings are primitive, therefore impossible to mutate
+// Why do they have methods?!
+// JS is smart. Behind the scenes, it converts the string into a string object. Then, on that object the method is called!
+// This is called 'boxing'
+// Takes string and puts it into a box
 
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); // A
+console.log(plane[1]); // 3
+console.log('B737'[0]); // B
+
+// METHODS on Strings:
+console.log(airline.length);
+console.log('B737'.length);
+console.log('------------------');
+// Other methods:
+console.log(airline.indexOf('r')); // Strings are also 0-based
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal')); // Search for complete words
+// SLICE:
+console.log(airline.slice(4)); // 4-Pos where the extraction starts
+console.log(airline.slice(4, 7)); // Stops extracting before 7 (7-4=3)
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // +1 To get rid of the ' '
+console.log(airline.slice(-2)); // last 2
+console.log(airline.slice(1, -1)); // Cuts off last character
+
+const checkMiddleSeat = function (seat) {
+  // B & E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat! 😞');
+  else console.log('You got lucky 😎');
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+/*
 // =======================
 // Summary: Which Data Structure to Use?
 // =======================
@@ -68,7 +110,7 @@ taskMap = new Map([
 // =======================
 // Maps: Iteration
 // =======================
-/*
+
 // Another way to populate the map(), without using the set() method.
 
 const question = new Map([
