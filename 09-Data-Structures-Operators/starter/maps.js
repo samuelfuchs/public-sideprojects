@@ -1,5 +1,9 @@
 'use stict';
 // =======================
+// Working With Strings - Part 3
+// =======================
+/*
+// =======================
 // Working With Strings - Part 2
 // =======================
 // Changing the case of a string
