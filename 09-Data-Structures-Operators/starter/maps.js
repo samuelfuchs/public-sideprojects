@@ -2,6 +2,7 @@
 // =======================
 // Working With Strings - Part 3
 // =======================
+//Split and Join
 // Split - one of the most powerful methods for strings
 
 console.log('a+very+nice+string'.split('+'));
@@ -12,6 +13,45 @@ const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
 // join - opposite of split
 const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
 console.log(newName);
+
+const capitalizedName = function (name) {
+  const names = name.split(' ');
+
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizedName('jessica ann smith davis');
+capitalizedName('Jonas Schmedtmann');
+
+// padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+')); // fills up with '+'
+console.log('Jonas'.padEnd(25, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(232323231414));
+console.log(maskCreditCard('12312312321312323123'));
+
+// repeat
+const message2 = 'Bad weather... All Departures Delayed... ';
+console.log(message2.repeat(2));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+
+planesInLine(5);
 
 /*
 // =======================
