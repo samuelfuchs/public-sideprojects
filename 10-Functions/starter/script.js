@@ -1,8 +1,36 @@
 'use strict';
 // ===============
+// First-Class and Higher-Order Functions
+// ===============
+// FIRST-CLASS FUNCTIONS
+// JS treats functions as first-class citizens
+// This means that functions are simply values
+// Functions are just another "type" of object
+
+// Store functions in variables or properties
+// Pass functions as arguments to OTHER functions ( like eventListeners)
+// Return functions FROM functions
+// Call methos on functions (bind methods, etc)
+
+// HIGHER-ORDER FUNCTIONS
+// A function that receives another function as an argument, that returns a new function, or BOTH
+// This is only possible because of first-class functions
+
+// 1. Function that receives another function
+// EventListeners are Higher-order functions, they get a callback function
+// callback func will be called later by the higher-order func (as soon a click happens, for example)
+
+// 2. Function that returns new function
+// More advanced and harder to understand
+
+// First-class func vs Higher-order fun
+// first-class: feature that a programming language has or not. All that this means is that all functions are values.
+// Higher-order: is only possible because JS supports first-class func.
+
+// ===============
 // How Passing Arguments Works: Value vs. Reference
 // ===============
-
+/*
 // Interaction of functions with the same obj can generate problems
 
 const flight = 'LH234';
@@ -37,7 +65,7 @@ checkIn(flight, jonas);
 // Experienced programmers, learning JS, have problemas understanding this
 // JS does NOT have passing by reference, ONLY passing by value
 // even though it looks that it is passing by reference
-
+*/
 // ===============
 // Default Parameters
 // ===============
