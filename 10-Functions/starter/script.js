@@ -38,6 +38,7 @@ document.body.addEventListener('click', high5);
 // 1. It splits up the code into reusable & interconected parts
 // 2. Allow to create abstraction
 // We hide the detail of some code intempletation because we don't really care about all that detail. Allows to think about problems in a higher more abstract way.
+// High-order functinos = high-order of abstraction
 
 // ===============
 // First-Class and Higher-Order Functions
