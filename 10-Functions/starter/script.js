@@ -1,38 +1,60 @@
 'use strict';
 // ===============
+// Functions Returning Functions
+// ===============
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('hey');
+greeterHey('Jonas');
+// Closures - one of the most misunderstood things in JS (in later video)
+
+greet('hello')('Jonas');
+
+// This is very important for Functional Programming
+// rewritting with arrow func
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+greetArr('hello')('Samuel');
+
+// ===============
 // Functions Accepting Callback Functions
 // ===============
 // Functions that accept other func as input
 
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
-};
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
-};
+// const upperFirstWord = function (str) {
+//   const [first, ...others] = str.split(' ');
+//   return [first.toUpperCase(), ...others].join(' ');
+// };
 
-// Higher-order func
-// Funcs have methods and can have properties
-const transformer = function (str, fn) {
-  console.log(`Original string: ${str}`);
-  console.log(`Transformed string: ${fn(str)}`);
+// // Higher-order func
+// // Funcs have methods and can have properties
+// const transformer = function (str, fn) {
+//   console.log(`Original string: ${str}`);
+//   console.log(`Transformed string: ${fn(str)}`);
 
-  console.log(`Transformed by: ${fn.name}`);
-};
+//   console.log(`Transformed by: ${fn.name}`);
+// };
 
-transformer('JavaScript is the best!!', upperFirstWord);
-transformer('JavaScript is the best!!', oneWord);
+// transformer('JavaScript is the best!!', upperFirstWord);
+// transformer('JavaScript is the best!!', oneWord);
 
-const high5 = function () {
-  console.log('🖐');
-};
+// const high5 = function () {
+//   console.log('🖐');
+// };
 
-// JS uses callbacks all the time
-document.body.addEventListener('click', high5);
+// // JS uses callbacks all the time
+// document.body.addEventListener('click', high5);
 
-['Jonas', 'Martha', 'Adam'].forEach(high5); // 3x 🖐
+// ['Jonas', 'Martha', 'Adam'].forEach(high5); // 3x 🖐
 
 // WHY USE CALLBACK FUNCTIONS
 // 1. It splits up the code into reusable & interconected parts
