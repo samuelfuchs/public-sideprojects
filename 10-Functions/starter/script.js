@@ -1,5 +1,45 @@
 'use strict';
 // ===============
+// Functions Accepting Callback Functions
+// ===============
+// Functions that accept other func as input
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// Higher-order func
+// Funcs have methods and can have properties
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer('JavaScript is the best!!', upperFirstWord);
+transformer('JavaScript is the best!!', oneWord);
+
+const high5 = function () {
+  console.log('🖐');
+};
+
+// JS uses callbacks all the time
+document.body.addEventListener('click', high5);
+
+['Jonas', 'Martha', 'Adam'].forEach(high5); // 3x 🖐
+
+// WHY USE CALLBACK FUNCTIONS
+// 1. It splits up the code into reusable & interconected parts
+// 2. Allow to create abstraction
+// We hide the detail of some code intempletation because we don't really care about all that detail. Allows to think about problems in a higher more abstract way.
+
+// ===============
 // First-Class and Higher-Order Functions
 // ===============
 // FIRST-CLASS FUNCTIONS
