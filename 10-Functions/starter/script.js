@@ -1,25 +1,31 @@
 'use strict';
 // ===============
+// The call and apply Methods
+// ===============
+
+//
+
+// ===============
 // Functions Returning Functions
 // ===============
 
-const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
-  };
-};
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
 
-const greeterHey = greet('hey');
-greeterHey('Jonas');
-// Closures - one of the most misunderstood things in JS (in later video)
+// const greeterHey = greet('hey');
+// greeterHey('Jonas');
+// // Closures - one of the most misunderstood things in JS (in later video)
 
-greet('hello')('Jonas');
+// greet('hello')('Jonas');
 
-// This is very important for Functional Programming
-// rewritting with arrow func
-const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+// // This is very important for Functional Programming
+// // rewritting with arrow func
+// const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 
-greetArr('hello')('Samuel');
+// greetArr('hello')('Samuel');
 
 // ===============
 // Functions Accepting Callback Functions
