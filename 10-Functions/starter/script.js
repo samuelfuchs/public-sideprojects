@@ -2,9 +2,67 @@
 // ===============
 // The call and apply Methods
 // ===============
-
 //
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // old syntax: book: function(){}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+lufthansa.book(239, 'Jonas Schmedtmann');
+lufthansa.book(635, 'John Smith');
 
+console.log(lufthansa);
+
+// After some time, Lufthansa created a new airline group:
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+// Store the book function in a separate variable
+// It's not a method anymore, it's a regular function
+const book = lufthansa.book; // is now a regular function call and the 'this' keyword returns undefined
+
+// book(23, 'Sarah WIlliams'); // DOES NOT WORK
+
+// AGAIN: The 'this' keyword depends on how the function is actually called
+
+// CALL METHOD
+
+// tell the 'this' keyword explicitly what to do: call(), apply(), bind()
+book.call(eurowings, 23, 'Sarah Williams'); // we call the 'call' method, which calls the book methods with 'this' keyword set to 'eurowings'
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Mary Cooper'); // same with lufthansa obj
+console.log(lufthansa);
+
+// another airline: (same procedure)
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Mary Cooper and David');
+console.log(swiss);
+
+// APPLY METHOD
+// same as call method, except it does not receive a list of arguments after the 'this' keyword, but takes an array as arguments
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+// APPLY method is not that used anymore
+// Now we have the spread operator
+book.call(swiss, ...flightData);
 // ===============
 // Functions Returning Functions
 // ===============
