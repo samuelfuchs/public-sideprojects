@@ -1,35 +1,59 @@
 'use strict';
 // ===============
+// Closures
+// ===============
+// Closure is not a feature that we explicitly use. That means, we do not create closures manually like we do with new arrays or a new function.
+// Closures simply happen automatically in certain situations
+// We just need to recognize those situations
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+// the booker variable is able to increment the passengerCount even it has no access to its content:
+booker();
+booker();
+booker();
+
+// A closure makes a func remember all the variable at a func's birthplace
+
+// ===============
 // Immediately Invoked Function Expressions (IIFE)
 // ===============
-// Sometimes in JS we need a func that is only executed once and then never again.
-// basically, a func that 'disappears' right after it was called.
-//
 
-const runOnce = function () {
-  console.log(`This will never run again`); // can actually be reused!
-};
-runOnce();
+// // Sometimes in JS we need a func that is only executed once and then never again.
+// // basically, a func that 'disappears' right after it was called.
+// //
 
-// IIFE:
-// Write the func without assigning it to any variable
-// We trick JS by wrapping everything into (), so JS thinks it's an expression
-(function () {
-  console.log(`This will never run again`);
-})(); // the last () is to imediatly call it
+// const runOnce = function () {
+//   console.log(`This will never run again`); // can actually be reused!
+// };
+// runOnce();
 
-// Works with arrow func as well:
-(() => console.log(`This will ALSO never run again`))();
+// // IIFE:
+// // Write the func without assigning it to any variable
+// // We trick JS by wrapping everything into (), so JS thinks it's an expression
+// (function () {
+//   console.log(`This will never run again`);
+// })(); // the last () is to imediatly call it
 
-// WHY WAS THIS INVENTED?
-// func create scopes. (let/const create each their own scope as well)
-// one scope does not have access to variables from an inner scope
-// data privacy / incapsulation are important concepts in JS
+// // Works with arrow func as well:
+// (() => console.log(`This will ALSO never run again`))();
 
-{
-  const isPrivate = 23; // not accessible
-  var notPrivate = 22; // is accessible
-}
+// // WHY WAS THIS INVENTED?
+// // func create scopes. (let/const create each their own scope as well)
+// // one scope does not have access to variables from an inner scope
+// // data privacy / incapsulation are important concepts in JS
+
+// {
+//   const isPrivate = 23; // not accessible
+//   var notPrivate = 22; // is accessible
+// }
 
 // ===============
 // The call and apply Methods
