@@ -1,5 +1,37 @@
 'use strict';
 // ===============
+// Immediately Invoked Function Expressions (IIFE)
+// ===============
+// Sometimes in JS we need a func that is only executed once and then never again.
+// basically, a func that 'disappears' right after it was called.
+//
+
+const runOnce = function () {
+  console.log(`This will never run again`); // can actually be reused!
+};
+runOnce();
+
+// IIFE:
+// Write the func without assigning it to any variable
+// We trick JS by wrapping everything into (), so JS thinks it's an expression
+(function () {
+  console.log(`This will never run again`);
+})(); // the last () is to imediatly call it
+
+// Works with arrow func as well:
+(() => console.log(`This will ALSO never run again`))();
+
+// WHY WAS THIS INVENTED?
+// func create scopes. (let/const create each their own scope as well)
+// one scope does not have access to variables from an inner scope
+// data privacy / incapsulation are important concepts in JS
+
+{
+  const isPrivate = 23; // not accessible
+  var notPrivate = 22; // is accessible
+}
+
+// ===============
 // The call and apply Methods
 // ===============
 // Also allows us to manually set the 'this' keyword
