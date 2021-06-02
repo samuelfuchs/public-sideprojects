@@ -1,26 +1,33 @@
 'use strict';
 // ===============
+// More closures
+// ===============
+
+//
+
+// ===============
 // Closures
 // ===============
-// Closure is not a feature that we explicitly use. That means, we do not create closures manually like we do with new arrays or a new function.
-// Closures simply happen automatically in certain situations
-// We just need to recognize those situations
-const secureBooking = function () {
-  let passengerCount = 0;
 
-  return function () {
-    passengerCount++;
-    console.log(`${passengerCount} passengers`);
-  };
-};
+// // Closure is not a feature that we explicitly use. That means, we do not create closures manually like we do with new arrays or a new function.
+// // Closures simply happen automatically in certain situations
+// // We just need to recognize those situations
+// const secureBooking = function () {
+//   let passengerCount = 0;
 
-const booker = secureBooking();
-// the booker variable is able to increment the passengerCount even it has no access to its content:
-booker();
-booker();
-booker();
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
 
-// A closure makes a func remember all the variable at a func's birthplace
+// const booker = secureBooking();
+// // the booker variable is able to increment the passengerCount even it has no access to its content:
+// booker();
+// booker();
+// booker();
+
+// // A closure makes a func remember all the variable at a func's birthplace
 
 // ===============
 // Immediately Invoked Function Expressions (IIFE)
