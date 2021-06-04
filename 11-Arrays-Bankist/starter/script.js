@@ -165,3 +165,21 @@ movements.forEach(function (mov, i, arr) {
 // currenciesUnique.forEach(function (value, _, map) {
 //   console.log(`${value}: ${value}`);
 // });
+
+// ==========
+// Data Transformations: map, filter, reduce
+// ==========
+// MAP
+// Another method to loop over arrays
+// similar to forEach, but creates an new array
+// map returns a new array containing the results of applying an operation on all original array elements
+// current
+
+// FILTER
+// Only elements that pass the specification will make it into a new, filtered, array
+// filter returns a new array containing the array elements that passed a specified test condition
+// current
+
+// REDUCE
+// reduce boils ("reduces") all array elements down to one single value (e.g. adding all elements together)
+// acc + current
