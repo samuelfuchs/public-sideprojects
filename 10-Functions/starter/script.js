@@ -3,40 +3,79 @@
 // More closures
 // ===============
 
-//
+// Example 1
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g(); // g will assign to our empty variable the first 'f' function
+f();
+
+// re-assigned f function:
+h(); // 'f' function will be assigned again
+f();
+console.dir(f);
+
+// Example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+const perGroup = 1000; // if we commented out perGroup in the boardPassengers function, this one would be used. But, if it stays inside the func it will be used first (Closure has priority over scope chain)
+boardPassengers(180, 3);
 
 // ===============
 // Closures
 // ===============
-// We do NOT have to manually create closures, this is a JS feature that happens automatically.
-// We can't even access closed-over variables explicitly. A closure is NOT a tangible JS object
-// We can, however, look at them
-// Closure is not a feature that we explicitly use. That means, we do not create closures manually like we do with new arrays or a new function.
-// Closures simply happen automatically in certain situations
-// We just need to recognize those situations
-const secureBooking = function () {
-  let passengerCount = 0;
 
-  return function () {
-    passengerCount++;
-    console.log(`${passengerCount} passengers`);
-  };
-};
+// // We do NOT have to manually create closures, this is a JS feature that happens automatically.
+// // We can't even access closed-over variables explicitly. A closure is NOT a tangible JS object
+// // We can, however, look at them
+// // Closure is not a feature that we explicitly use. That means, we do not create closures manually like we do with new arrays or a new function.
+// // Closures simply happen automatically in certain situations
+// // We just need to recognize those situations
+// const secureBooking = function () {
+//   let passengerCount = 0;
 
-const booker = secureBooking();
-// the booker variable is able to increment the passengerCount even it has no access to its content:
-booker();
-booker();
-booker();
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
 
-console.dir(booker);
+// const booker = secureBooking();
+// // the booker variable is able to increment the passengerCount even it has no access to its content:
+// booker();
+// booker();
+// booker();
 
-// A closure makes a func remember all the variable at a func's birthplace
+// console.dir(booker);
 
-// A closure is the closed-over variable environment of the execution context in which a function was created, even after that execution context is gone
-// Less formal: a closure gives a fucntion access to all the variables of its parent function, even AFTER that parent function has returned. The function keeps a reference to its outer scope, which preserves the scope chain throughout time.
-// Less formal: a closure makes sure that a fucntion doesn't loose connection to variables that existed at the function's birth place
-// Backpack analogy: a closure is like a backpack that a function carries around wherever it goes. This backpack has all the variables that were present in the environment where the function was created
+// // A closure makes a func remember all the variable at a func's birthplace
+
+// // A closure is the closed-over variable environment of the execution context in which a function was created, even after that execution context is gone
+// // Less formal: a closure gives a fucntion access to all the variables of its parent function, even AFTER that parent function has returned. The function keeps a reference to its outer scope, which preserves the scope chain throughout time.
+// // Less formal: a closure makes sure that a fucntion doesn't loose connection to variables that existed at the function's birth place
+// // Backpack analogy: a closure is like a backpack that a function carries around wherever it goes. This backpack has all the variables that were present in the environment where the function was created
 
 // ===============
 // Immediately Invoked Function Expressions (IIFE)
