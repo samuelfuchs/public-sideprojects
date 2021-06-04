@@ -183,3 +183,37 @@ movements.forEach(function (mov, i, arr) {
 // REDUCE
 // reduce boils ("reduces") all array elements down to one single value (e.g. adding all elements together)
 // acc + current
+
+// ==========
+// The map Method
+// ==========
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+
+// we use a MAP method to loop over elements and create a new array automatically
+// Direction of functional programming
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+
+// some people say, arrow func like this lead to bad readability
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+
+// manually creating an array and pushing elements to it:
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+
+console.log(movementsUSDfor);
+
+// it's valid to have multiple return statements in one func as long as only one is being executed
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+console.log(movementsDescriptions);
