@@ -65,12 +65,6 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
-
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
@@ -109,7 +103,7 @@ console.log([...arr, ...arr2]); // same result, doesn't mutate also
 
 // JOIN
 console.log(letters.join(' - ')); // a - b - c - d - e - f - g - h - i - j
-*/
+
 // ==========
 // Looping Arrays: forEach
 // ==========
@@ -147,3 +141,27 @@ movements.forEach(function (mov, i, arr) {
 // One fundamental defference: you cannot break out of a forEach loop
 // forEach will always loop over the entire array
 // other than that, it comes down to personal preference
+*/
+// ==========
+// forEach With Maps and Sets
+// ==========
+
+// MAP
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+// SET
+// doesnt have keys
+// '_' means throwaway, unnacessary
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${value}: ${value}`);
+});
