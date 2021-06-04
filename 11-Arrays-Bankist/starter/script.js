@@ -84,3 +84,27 @@ let arr = ['a', 'b', 'c', 'd', 'e'];
 console.log(arr.slice(2));
 console.log(arr.slice(2, 4)); // end parameter is not included
 console.log(arr.slice(-2)); // will start to copy from the end of the array
+console.log(arr.slice(1, -2));
+console.log(arr.slice()); // create shallow copy
+console.log([...arr]); // other way to create shallow copy
+
+// SPLICE method
+// Does mutate, does change the original
+// console.log(arr.splice(2));
+arr.splice(-1); // delete the last element of array
+console.log(arr); // all that remains is: a and b
+
+// REVERSE
+// Does mutate, changes original
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse());
+
+// CONCAT
+// Does NOT mutate
+const letters = arr.concat(arr2);
+console.log(letters);
+console.log([...arr, ...arr2]); // same result, doesn't mutate also
+
+// JOIN
+console.log(letters.join(' - ')); // a - b - c - d - e - f - g - h - i - j
