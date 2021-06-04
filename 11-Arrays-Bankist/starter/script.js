@@ -217,3 +217,6 @@ const movementsDescriptions = movements.map(
     )}`
 );
 console.log(movementsDescriptions);
+
+// forEach method creates side effects
+// map did not create side effect in this case
