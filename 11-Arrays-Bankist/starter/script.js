@@ -65,7 +65,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -187,36 +187,60 @@ movements.forEach(function (mov, i, arr) {
 // ==========
 // The map Method
 // ==========
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const eurToUsd = 1.1;
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-// we use a MAP method to loop over elements and create a new array automatically
-// Direction of functional programming
-// const movementsUSD = movements.map(function (mov) {
-//   return mov * eurToUsd;
-// });
+// const eurToUsd = 1.1;
 
-// some people say, arrow func like this lead to bad readability
-const movementsUSD = movements.map(mov => mov * eurToUsd);
+// // we use a MAP method to loop over elements and create a new array automatically
+// // Direction of functional programming
+// // const movementsUSD = movements.map(function (mov) {
+// //   return mov * eurToUsd;
+// // });
 
+// // some people say, arrow func like this lead to bad readability
+// const movementsUSD = movements.map(mov => mov * eurToUsd);
+
+// console.log(movements);
+// console.log(movementsUSD);
+
+// // manually creating an array and pushing elements to it:
+// const movementsUSDfor = [];
+// for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+
+// console.log(movementsUSDfor);
+
+// // it's valid to have multiple return statements in one func as long as only one is being executed
+// const movementsDescriptions = movements.map(
+//   (mov, i) =>
+//     `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+//       mov
+//     )}`
+// );
+// console.log(movementsDescriptions);
+
+// // forEach method creates side effects
+// // map did not create side effect in this case
+
+// ==========
+// The filter Method
+// ==========
+
+// used to filter an element that satisfy a certain condition
+// with callback func
+const deposits = movements.filter(function (mov, i, arr) {
+  return mov > 0;
+});
 console.log(movements);
-console.log(movementsUSD);
+console.log(deposits);
 
-// manually creating an array and pushing elements to it:
-const movementsUSDfor = [];
-for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
 
-console.log(movementsUSDfor);
+// Why not use for loops for everything???
+// because JS is pushing more towards functional programming
+// more practical reason: we can actually chain methods together, which is not possible with for loops
 
-// it's valid to have multiple return statements in one func as long as only one is being executed
-const movementsDescriptions = movements.map(
-  (mov, i) =>
-    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
-      mov
-    )}`
-);
-console.log(movementsDescriptions);
-
-// forEach method creates side effects
-// map did not create side effect in this case
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
