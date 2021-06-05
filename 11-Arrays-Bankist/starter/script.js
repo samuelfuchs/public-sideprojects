@@ -273,3 +273,10 @@ console.log(balanceAcc);
 let balance2 = 0; // our initial value for the forOf loop, just like the initial acc
 for (const mov of movements) balance2 += mov;
 console.log(balance2);
+
+// get maximum value:
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+console.log(max);
