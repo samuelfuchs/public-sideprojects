@@ -226,21 +226,50 @@ movements.forEach(function (mov, i, arr) {
 // The filter Method
 // ==========
 
-// used to filter an element that satisfy a certain condition
-// with callback func
-const deposits = movements.filter(function (mov, i, arr) {
-  return mov > 0;
-});
+// // used to filter an element that satisfy a certain condition
+// // with callback func
+// const deposits = movements.filter(function (mov, i, arr) {
+//   return mov > 0;
+// });
+// console.log(movements);
+// console.log(deposits);
+
+// const depositsFor = [];
+// for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+// console.log(depositsFor);
+
+// // Why not use for loops for everything???
+// // because JS is pushing more towards functional programming
+// // more practical reason: we can actually chain methods together, which is not possible with for loops
+
+// const withdrawals = movements.filter(mov => mov < 0);
+// console.log(withdrawals);
+
+// ==========
+// The reduce Method
+// ==========
+
+// boils down all element to one single array
+// gets a callback func as well, BUT IT IS A BIT DIFFERENT than forEach() or map()
+// in the other ones, the first element in the callback func is the current el, the 2nd is the index, 3rd is the entire arr
+// here, the 1st is actually called the accumulater (acc)
+// it's like a snowball that we throw to accumulate everything we want along its way
+// This is the first way to use reduce():
 console.log(movements);
-console.log(deposits);
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  return acc + cur;
+});
 
-const depositsFor = [];
-for (const mov of movements) if (mov > 0) depositsFor.push(mov);
-console.log(depositsFor);
+// // 2nd way to use reduce(), with an initial acc:
+// const balanceAcc = movements.reduce(function (acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   return acc + cur;
+// }, 0); // 0 is the initial value for the first loop iteration
+// =-=-=-=-=-=-=- rewriting the above as an arrow func:
+const balanceAcc = movements.reduce((acc, cur) => acc + cur, 0); // 0 is the initial value for the first loop iteration
+console.log(balanceAcc);
 
-// Why not use for loops for everything???
-// because JS is pushing more towards functional programming
-// more practical reason: we can actually chain methods together, which is not possible with for loops
-
-const withdrawals = movements.filter(mov => mov < 0);
-console.log(withdrawals);
+// If we used a for loop, we always need an external variable to store the result
+let balance2 = 0; // our initial value for the forOf loop, just like the initial acc
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
