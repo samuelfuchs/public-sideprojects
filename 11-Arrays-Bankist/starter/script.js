@@ -249,34 +249,49 @@ movements.forEach(function (mov, i, arr) {
 // The reduce Method
 // ==========
 
-// boils down all element to one single array
-// gets a callback func as well, BUT IT IS A BIT DIFFERENT than forEach() or map()
-// in the other ones, the first element in the callback func is the current el, the 2nd is the index, 3rd is the entire arr
-// here, the 1st is actually called the accumulater (acc)
-// it's like a snowball that we throw to accumulate everything we want along its way
-// This is the first way to use reduce():
-console.log(movements);
-const balance = movements.reduce(function (acc, cur, i, arr) {
-  return acc + cur;
-});
-
-// // 2nd way to use reduce(), with an initial acc:
-// const balanceAcc = movements.reduce(function (acc, cur, i, arr) {
-//   console.log(`Iteration ${i}: ${acc}`);
+// // boils down all element to one single array
+// // gets a callback func as well, BUT IT IS A BIT DIFFERENT than forEach() or map()
+// // in the other ones, the first element in the callback func is the current el, the 2nd is the index, 3rd is the entire arr
+// // here, the 1st is actually called the accumulater (acc)
+// // it's like a snowball that we throw to accumulate everything we want along its way
+// // This is the first way to use reduce():
+// console.log(movements);
+// const balance = movements.reduce(function (acc, cur, i, arr) {
 //   return acc + cur;
-// }, 0); // 0 is the initial value for the first loop iteration
-// =-=-=-=-=-=-=- rewriting the above as an arrow func:
-const balanceAcc = movements.reduce((acc, cur) => acc + cur, 0); // 0 is the initial value for the first loop iteration
-console.log(balanceAcc);
+// });
 
-// If we used a for loop, we always need an external variable to store the result
-let balance2 = 0; // our initial value for the forOf loop, just like the initial acc
-for (const mov of movements) balance2 += mov;
-console.log(balance2);
+// // // 2nd way to use reduce(), with an initial acc:
+// // const balanceAcc = movements.reduce(function (acc, cur, i, arr) {
+// //   console.log(`Iteration ${i}: ${acc}`);
+// //   return acc + cur;
+// // }, 0); // 0 is the initial value for the first loop iteration
+// // =-=-=-=-=-=-=- rewriting the above as an arrow func:
+// const balanceAcc = movements.reduce((acc, cur) => acc + cur, 0); // 0 is the initial value for the first loop iteration
+// console.log(balanceAcc);
 
-// get maximum value:
-const max = movements.reduce((acc, mov) => {
-  if (acc > mov) return acc;
-  else return mov;
-}, movements[0]);
-console.log(max);
+// // If we used a for loop, we always need an external variable to store the result
+// let balance2 = 0; // our initial value for the forOf loop, just like the initial acc
+// for (const mov of movements) balance2 += mov;
+// console.log(balance2);
+
+// // get maximum value:
+// const max = movements.reduce((acc, mov) => {
+//   if (acc > mov) return acc;
+//   else return mov;
+// }, movements[0]);
+// console.log(max);
+
+// ==========
+// The Magic of Chaining Methods
+// ==========
+
+const eurToUsd = 1.1;
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  // .map(mov => mov * eurToUsd)
+  .map((mov, i, arr) => {
+    // console.log(arr);
+    return mov * eurToUsd;
+  })
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUSD);
