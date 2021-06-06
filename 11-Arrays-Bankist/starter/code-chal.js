@@ -27,33 +27,57 @@
 // Coding Challenge #2
 // ==========
 
-// 1.
-// Data 1: [5, 2, 4, 1, 15, 8, 3]
-// Data 2: [16, 6, 10, 5, 6, 1, 4]
+// // 1.
+// // Data 1: [5, 2, 4, 1, 15, 8, 3]
+// // Data 2: [16, 6, 10, 5, 6, 1, 4]
 
-// const data1 = [5, 2, 4, 1, 15, 8, 3];
+// // const data1 = [5, 2, 4, 1, 15, 8, 3];
 
-// const avgHumanAgeMap = data1.map(function (mov, i) {
-//   if (mov <= 2) {
-//     return mov * 2;
-//   } else {
-//     return 16 + mov * 4;
-//   }
-// });
-// console.log(avgHumanAgeMap);
-// // 2.
-// const adultDogs = avgHumanAgeMap.filter(function (mov) {
-//   return mov >= 18;
-// });
-// console.log(adultDogs);
+// // const avgHumanAgeMap = data1.map(function (mov, i) {
+// //   if (mov <= 2) {
+// //     return mov * 2;
+// //   } else {
+// //     return 16 + mov * 4;
+// //   }
+// // });
+// // console.log(avgHumanAgeMap);
+// // // 2.
+// // const adultDogs = avgHumanAgeMap.filter(function (mov) {
+// //   return mov >= 18;
+// // });
+// // console.log(adultDogs);
 
-// // 3.
-// const avgAgeAdult = adultDogs.reduce(function (acc, mov) {
-//   return (acc + mov) / adultDogs.length;
-// }, adultDogs[0]);
-// console.log(avgAgeAdult);
+// // // 3.
+// // const avgAgeAdult = adultDogs.reduce(function (acc, mov) {
+// //   return (acc + mov) / adultDogs.length;
+// // }, adultDogs[0]);
+// // console.log(avgAgeAdult);
 
-const calcAverageHumanAge = function (ages) {
+// const calcAverageHumanAge = function (ages) {
+//   const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+
+//   const adults = humanAges.filter(age => age >= 18);
+//   console.log(humanAges);
+//   console.log(adults);
+
+//   //   const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+//   // different way to calculate avg:
+//   const average = adults.reduce(
+//     (acc, age, i, arr) => acc + age / arr.length,
+//     0
+//   );
+//   return average;
+// };
+
+// const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+
+// const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+// console.log(avg1, avg2);
+
+// ==========
+// Coding Challenge #3
+// ==========
+const calcAverageHumanAge2 = function (ages) {
   const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
 
   const adults = humanAges.filter(age => age >= 18);
@@ -68,6 +92,12 @@ const calcAverageHumanAge = function (ages) {
   );
   return average;
 };
+
+const calcAverageHumanAge = ages =>
+  ages
+    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
 
 const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 
