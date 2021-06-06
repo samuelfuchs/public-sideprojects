@@ -299,20 +299,21 @@ movements.forEach(function (mov, i, arr) {
 // ==========
 // The find Method
 // ==========
-// usually the reason we use this method is to find exactly one element
-// Retrieve an el of an array based on a condition
-// also has callback func
-// Returns only the first array that satisfies the condition
-const firstWithdrawal = movements.find(mov => mov < 0);
-console.log(movements);
-console.log(firstWithdrawal);
 
-// filter vs find:
-// 1st - find only returns the first element that satisfies the condition, filter returns all the elements that match the condition
-// 2nd - filter returns a new arr, while find returns only that el (not an array)
+// // usually the reason we use this method is to find exactly one element
+// // Retrieve an el of an array based on a condition
+// // also has callback func
+// // Returns only the first array that satisfies the condition
+// const firstWithdrawal = movements.find(mov => mov < 0);
+// console.log(movements);
+// console.log(firstWithdrawal);
 
-console.log(accounts);
+// // filter vs find:
+// // 1st - find only returns the first element that satisfies the condition, filter returns all the elements that match the condition
+// // 2nd - filter returns a new arr, while find returns only that el (not an array)
 
-// here we get only one account that we specify
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account);
+// console.log(accounts);
+
+// // here we get only one account that we specify
+// const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+// console.log(account);
