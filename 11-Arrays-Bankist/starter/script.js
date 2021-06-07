@@ -326,3 +326,29 @@ movements.forEach(function (mov, i, arr) {
 // findIndex vs indexOf
 // indexOf - we can only look for values that are in the array
 // findIndex - we can create a more complex condition. Can be anything that returns true or false
+
+// ==========
+// some and every
+// ==========
+
+console.log(movements);
+
+// Checks only for EQUALITY
+console.log(movements.includes(-130));
+
+// SOME: Checks for CONDITION
+console.log(movements.some(mov => mov === -130)); // is the same as using 'includes'
+
+const anyDeposits = movements.some(mov => mov > 1500);
+console.log(anyDeposits);
+
+// EVERY
+// only returns true if ALL of the elements in the array pass the test
+console.log(movements.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
+
+// Separate callback
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
