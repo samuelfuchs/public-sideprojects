@@ -317,3 +317,12 @@ movements.forEach(function (mov, i, arr) {
 // // here we get only one account that we specify
 // const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 // console.log(account);
+
+// ==========
+// The findIndex  Method
+// ==========
+// Returns the index of certain element and not the element itself
+
+// findIndex vs indexOf
+// indexOf - we can only look for values that are in the array
+// findIndex - we can create a more complex condition. Can be anything that returns true or false
