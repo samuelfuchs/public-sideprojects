@@ -94,6 +94,8 @@ const calcAverageHumanAge2 = function (ages) {
   return average;
 };
 
+// dd
+
 const calcAverageHumanAge = ages =>
   ages
     .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
