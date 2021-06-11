@@ -94,7 +94,7 @@ const calcAverageHumanAge2 = function (ages) {
   return average;
 };
 
-// dd Oddxx
+// dd Odd52
 
 const calcAverageHumanAge = ages =>
   ages
