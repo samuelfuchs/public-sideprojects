@@ -356,3 +356,37 @@ movements.forEach(function (mov, i, arr) {
 // ==========
 // flat and flatMap
 // ==========
+// flat and flatMap were introduced in ES19
+// flat removes nested arrays and flattens it
+// flat method only goes one level deep
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat());
+// default is '1' as argument
+// here we go 2 levels deep:
+console.log(arrDeep.flat(2));
+
+// const accountMovements = accounts.map(acc => acc.movements);
+// console.log(accountMovements);
+// const allMovements = accountMovements.flat();
+// console.log(allMovements);
+// const overalBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
+
+// using map() first an then flat() is a common operation
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
+// flatMap is better for performance
+// flatMap() receives the same input as a map()
+// flatMap() goes only one level deep
+// if you need to go one level deeper, use the flat() seperately
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance2);
