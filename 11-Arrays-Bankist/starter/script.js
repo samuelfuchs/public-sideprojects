@@ -396,39 +396,80 @@ movements.forEach(function (mov, i, arr) {
 // Sorting Arrays
 // ==========
 
-// Does sorting based on strings
-// Converts to strings and then sorts it
+// // Does sorting based on strings
+// // Converts to strings and then sorts it
 
-// CAREFUL: actually mutates the original array
+// // CAREFUL: actually mutates the original array
 
-// Strings
+// // Strings
 
-// sorts it alphabetically:
-const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
-console.log(owners.sort());
-console.log(owners);
+// // sorts it alphabetically:
+// const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+// console.log(owners.sort());
+// console.log(owners);
 
-// Numbers
-console.log(movements);
-// console.log(movements.sort());
+// // Numbers
+// console.log(movements);
+// // console.log(movements.sort());
 
-// return < 0, A before B (keep order)
-// return > 0, B before A (switch order)
+// // return < 0, A before B (keep order)
+// // return > 0, B before A (switch order)
 
-// Ascending
+// // Ascending
 
-// movements.sort((a, b) => {
-//   if (a > b) return 1;
-//   if (a < b) return -1;
-// });
-// improving:
-movements.sort((a, b) => a - b);
-console.log(movements);
+// // movements.sort((a, b) => {
+// //   if (a > b) return 1;
+// //   if (a < b) return -1;
+// // });
+// // improving:
+// movements.sort((a, b) => a - b);
+// console.log(movements);
 
-// Descending
-// movements.sort((a, b) => {
-//   if (a > b) return -1;
-//   if (a < b) return 1;
-// });
-movements.sort((a, b) => b - a);
-console.log(movements);
+// // Descending
+// // movements.sort((a, b) => {
+// //   if (a > b) return -1;
+// //   if (a < b) return 1;
+// // });
+// movements.sort((a, b) => b - a);
+// console.log(movements);
+
+// ==========
+// More Ways of Creating and Filling Arrays
+// ==========
+
+// Until now we have been filling out arrays manually, by hand:
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+// Empty arrays + fill method
+// Generate arrays programatically:
+const x = new Array(7);
+console.log(x);
+
+// Fill method:
+// does mutate the array
+// fills up the array with a specific character
+// x.fill(1);
+// Like the slice() we can specify where it should begin and end
+x.fill(1, 3, 5);
+console.log(x);
+
+arr.fill(23, 2, 6);
+console.log(arr);
+
+// Array.from
+// this is not a method on an array, intead we are using it on the array constructure
+// Array is a func, on the func we call the from() method
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log('Z array:', z); // [1, 2, 3, 4, 5, 6, 7]
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value')
+  );
+
+  console.log(movementsUI);
+});
