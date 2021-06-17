@@ -437,39 +437,81 @@ movements.forEach(function (mov, i, arr) {
 // More Ways of Creating and Filling Arrays
 // ==========
 
-// Until now we have been filling out arrays manually, by hand:
-const arr = [1, 2, 3, 4, 5, 6, 7];
-console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+// // Until now we have been filling out arrays manually, by hand:
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+// console.log(new Array(1, 2, 3, 4, 5, 6, 7));
 
-// Empty arrays + fill method
-// Generate arrays programatically:
-const x = new Array(7);
-console.log(x);
+// // Empty arrays + fill method
+// // Generate arrays programatically:
+// const x = new Array(7);
+// console.log(x);
 
-// Fill method:
-// does mutate the array
-// fills up the array with a specific character
-// x.fill(1);
-// Like the slice() we can specify where it should begin and end
-x.fill(1, 3, 5);
-console.log(x);
+// // Fill method:
+// // does mutate the array
+// // fills up the array with a specific character
+// // x.fill(1);
+// // Like the slice() we can specify where it should begin and end
+// x.fill(1, 3, 5);
+// console.log(x);
 
-arr.fill(23, 2, 6);
-console.log(arr);
+// arr.fill(23, 2, 6);
+// console.log(arr);
 
-// Array.from
-// this is not a method on an array, intead we are using it on the array constructure
-// Array is a func, on the func we call the from() method
-const y = Array.from({ length: 7 }, () => 1);
-console.log(y);
+// // Array.from
+// // this is not a method on an array, intead we are using it on the array constructure
+// // Array is a func, on the func we call the from() method
+// const y = Array.from({ length: 7 }, () => 1);
+// console.log(y);
 
-const z = Array.from({ length: 7 }, (_, i) => i + 1);
-console.log('Z array:', z); // [1, 2, 3, 4, 5, 6, 7]
+// const z = Array.from({ length: 7 }, (_, i) => i + 1);
+// console.log('Z array:', z); // [1, 2, 3, 4, 5, 6, 7]
 
-labelBalance.addEventListener('click', function () {
-  const movementsUI = Array.from(
-    document.querySelectorAll('.movements__value')
-  );
+// labelBalance.addEventListener('click', function () {
+//   const movementsUI = Array.from(
+//     document.querySelectorAll('.movements__value')
+//   );
 
-  console.log(movementsUI);
-});
+//   console.log(movementsUI);
+// });
+// ==========
+// Summary: Which Array Method to Use?
+// ==========
+// until now we learned 23 methods
+
+// Which array method to use?
+// What do I want to do?
+// Do I want to mutade the original array?
+
+// To mutate original array
+// Add to original: .push (end) / .unshift (start)
+// Remove from original: .pop (end) / .shift (start) / .splice (any)
+// Others: .reverse / .sort / .fill
+
+// A new array
+// Computed from original: .map (loop)
+// Filtered using conidition: .filter
+// Portion of original: .slice
+// Adding original to other: .concat
+// Flattening the original: .flat / .flatMap
+
+// An array index
+// Based on value: .indexOf
+// Based on test condition: .findIndex
+
+// An array element
+// Based on test condition: .find
+
+// Know if array includes
+// Based on value: .includes
+// Based on test condition: .some / .every
+
+// A new string
+// Based on separator string: .join
+
+// To transform to value
+// Based on accumulator: .reduce
+// (Boil down array to single value of any type: number, string, boolean, or even new array or object)
+
+// To just loop array
+// Based on callback: .forEach
+// (Does not create a new array, just loops over it)
