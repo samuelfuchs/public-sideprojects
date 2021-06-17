@@ -164,7 +164,7 @@ btnLogin.addEventListener('click', function (e) {
   );
   console.log(currentAccount);
 
-  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+  if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and message
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(' ')[0]
@@ -182,7 +182,7 @@ btnLogin.addEventListener('click', function (e) {
 
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
-  const amount = Number(inputTransferAmount.value);
+  const amount = +inputTransferAmount.value;
   const receiverAcc = accounts.find(
     acc => acc.username === inputTransferTo.value
   );
@@ -206,7 +206,7 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value);
+  const amount = +inputLoanAmount.value;
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
     // Add movement
@@ -223,7 +223,7 @@ btnClose.addEventListener('click', function (e) {
 
   if (
     inputCloseUsername.value === currentAccount.username &&
-    Number(inputClosePin.value) === currentAccount.pin
+    +inputClosePin.value === currentAccount.pin
   ) {
     const index = accounts.findIndex(
       acc => acc.username === currentAccount.username
@@ -251,6 +251,43 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+
 // =========================
 // Converting and Checking Numbers
 // =========================
+
+// // In JS, all numbers are represented internally by floating point numbers
+// // always as decimals
+// console.log(23 === 23.0);
+
+// // numbers are represented in a 64 based-to format and are always stored in a binary format. Basically, they are composed of 0's and 1's
+
+// // Base 10 = numbers 0 - 9
+// // Binary base 2 = 0 1
+// // JS trys its best to hide fractions, but fails sometimes:
+// // PHP and Ruby do the same things
+// console.log(0.1 + 0.2);
+
+// // avoid doing really precise financial calculations with JS
+
+// // Convert string to number:
+// console.log(Number('23'));
+
+// // 'easier' way to convert string to number:
+// // when js sees the '+' operator it will do type coersion, converting all the operants to numbers
+// console.log(+'23');
+
+// // Parsing
+// // for this to work, the string needs to start with a Number
+// // the second argument we pass in is the number system (base 10 in this case) / binary would be '2'
+// console.log(Number.parseInt('30px', 10));
+// console.log(Number.parseInt('e23')); // NaN
+
+// // parseFloat get all the numbers even after the '.'
+// console.log(Number.parseFloat('2.5rem'));
+// console.log(Number.parseInt('2.5rem')); // 2
+
+// // isNaN
+// console.log(Number.isNaN(20)); // false
+// console.log(Number.isNaN('20')); // false
+// console.log(Number.isNaN(+'20px')); // true
