@@ -22,6 +22,7 @@ body {
 
 .main-header {
   background-color: #f7f7f7;
+  background-color: red;
   /* padding: 20px;
   padding-left: 40px;
   padding-right: 40px; */
@@ -232,7 +233,7 @@ h2 {
 }
 
 h2::before {
-  content: "TOP";
+  content: 'TOP';
   background-color: #ffe70e;
   color: #444;
   font-size: 16px;
@@ -265,3 +266,23 @@ footer p {
 nav p {
   font-size: 18px;
 } */
+.author-img {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author {
+  /* padding-left: 10px; */
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+h1 {
+  float: left;
+}
+nav {
+  float: right;
+}
+.clear {
+}
