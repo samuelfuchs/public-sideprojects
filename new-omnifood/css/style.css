@@ -36,9 +36,24 @@ Default: 1
   box-sizing: border-box;
 }
 
+html {
+  /* font-size: 10px; */
+  font-size: 62.5%;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
+}
+
+.test {
+  background-color: red;
+  /* width: 1000px; */
+  /* max-width: 1000px; */
+  max-width: 50rem;
+  padding: 4rem;
+  color: #fff;
+  font-size: 2rem;
 }
